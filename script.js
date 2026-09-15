@@ -1,5 +1,31 @@
-const items=document.querySelectorAll(".section,.project,.experience,.contact");
-const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");observer.unobserve(e.target)}})},{threshold:.08});
-items.forEach(i=>{i.style.opacity="0";i.style.transform="translateY(14px)";i.style.transition="opacity .6s ease, transform .6s ease";observer.observe(i)});
-const reveal=()=>document.querySelectorAll(".visible").forEach(i=>{i.style.opacity="1";i.style.transform="translateY(0)"});
-document.addEventListener("scroll",reveal,{passive:true});reveal();
+// Reveal sections/cards as they enter the viewport
+const revealTargets = document.querySelectorAll(
+  ".section, .project, .experience, .hero, .contact"
+);
+revealTargets.forEach((el) => el.classList.add("reveal"));
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.08 }
+);
+revealTargets.forEach((el) => observer.observe(el));
+
+// One deliberate load moment: the signal rail draws in from top to bottom
+const rail = document.querySelector(".rail");
+if (rail && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  rail.style.transform = "scaleY(0)";
+  rail.style.transformOrigin = "top";
+  rail.style.transition = "transform 1s ease";
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      rail.style.transform = "scaleY(1)";
+    });
+  });
+}
