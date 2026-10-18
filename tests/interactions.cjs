@@ -132,7 +132,7 @@ check(
 click('[data-detail="silverstone"]');
 check(
   d.querySelector("#detail-dialog").open &&
-    d.querySelector("#detail-title").textContent === "Silverstone",
+    d.querySelector("#detail-title").textContent === "Swift Wakala",
   "Project details open",
 );
 click("#detail-dialog [data-close]");

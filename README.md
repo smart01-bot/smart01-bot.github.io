@@ -4,7 +4,7 @@ A buildless, responsive portfolio for Raymond Jefa Duma, designed around code, c
 
 ## Run
 
-Serve the repository with any static server, for example `python3 -m http.server 8080`, then open `http://localhost:8080`. No `npm run build` is required. Google Fonts are optional; local font fallbacks keep the page usable offline.
+Serve the repository with any static server, for example `python3 -m http.server 8080`, then open `http://localhost:8080`. No `npm run build` is required. Typography uses system fonts and does not request external font files.
 
 GitHub Pages currently uses `main` and the repository root. The redesign is prepared on `feat/interactive-portfolio`; merging it into `main` publishes through the repository's existing Pages configuration.
 
@@ -34,3 +34,7 @@ Semantic sections, skip link, visible focus, keyboard-operable project tabs and 
 The automated checks cover project switching and keyboard navigation, simulations, task state, skill filters, motion/theme controls, waveform controls, detail dialogs, terminal output/history/injection handling, palette filtering/actions, internal links, unique IDs, and CV presence. Canvas rendering and responsive visual appearance still need a real-browser review; DOM checks do not replace that.
 
 Before merging, review desktop and mobile widths, touch rotation and vertical scrolling, canvas appearance in both themes, dialog focus restoration/Escape, reduced motion, CV download, and external links. The original PDF is unchanged.
+
+## Swift Wakala preview
+
+The first project now links to the public interactive Swift Wakala preview at https://swift-wakala-ui-preview.whole-field-8456.chatgpt.site. Internal `silverstone` element IDs remain stable for navigation and tests; the displayed project name is Swift Wakala. The font, heading sizes, and copy have been simplified. Versioned CSS and JavaScript URLs prevent the previous design’s cached assets from being mixed with the updated page.

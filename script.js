@@ -466,7 +466,7 @@ $$("[data-skill]").forEach((b) =>
 );
 const projectNotes = {
   silverstone: {
-    title: "Silverstone",
+    title: "Swift Wakala",
     body: [
       [
         "The problem",
@@ -567,7 +567,7 @@ const terminalResponses = {
   whoami:
     "Raymond Jefa Duma.\nSoftware developer with a foundation in Electronics & Telecommunications Engineering.\nBased in Dar es Salaam, Tanzania.\nCurious about what happens underneath.",
   projects:
-    "01 Silverstone — mobile-money float coordination\n02 Fahari — compliance and operations\n03 Tour de Rotary DSM — event web experience\n\nSelect a project in the Work section to explore it.",
+    "01 Swift Wakala — mobile-money float coordination\n02 Fahari — compliance and operations\n03 Tour de Rotary DSM — event web experience\n\nSelect a project in the Work section to explore it.",
   skills:
     "Software: Flutter, React, TypeScript, PHP, Java, Node.js\nData: PostgreSQL, Supabase, MySQL, REST APIs, Redis\nHardware: circuit diagnostics, oscilloscopes, preventive maintenance",
   contact:
