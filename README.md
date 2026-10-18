@@ -1,34 +1,20 @@
-# Raymond Duma — Personal portfolio
+# Raymond Duma / things I'm making
 
-A simple, responsive light-mode portfolio using semantic HTML and CSS. No JavaScript runtime, external fonts, authentication, analytics or build step.
+A small light-mode portfolio that reads more like a working notebook than a product landing page. Written in plain HTML and CSS without JavaScript, analytics, external fonts or runtime dependencies.
 
-## Design direction
+## What changed
 
-- Warm, light paper surfaces with quiet pine-green typography and accents.
-- Short introduction, three consistent project cards and direct interactive preview links.
-- Compact education and work background, without decorative dashboards or oversized monogram art.
-- Résumé PDF is prominent in the header, hero and dedicated résumé section.
-- Email and phone are deliberately plain, selectable text rather than mailto/tel links.
-- Source repositories and their preview repositories are independent and unchanged by this portfolio.
+- An intentionally irregular, type-led layout instead of evenly sized marketing cards and mock product screenshots.
+- Personal copy about electronics, learning software and actual project constraints.
+- Three external interactive demos: Swift Wakala, Fahari.io and Tour de Dar. Each demo is isolated from this repo.
+- Résumé download accessible from navigation, introduction and a dedicated high-visibility section.
+- Contact email and phone displayed only as selectable text, not `mailto:` or `tel:` links.
+- No production payments or real customer data. The previews are demonstrations and are labelled accordingly.
 
-## Preview links
+## Run
 
-- [Swift Wakala](https://smart01-bot.github.io/swift-wakala-preview/)
-- [Fahari.io](https://smart01-bot.github.io/Fahari.io-preview/)
-- [Tour de Dar](https://smart01-bot.github.io/tour-de-dar-preview/)
+Open `index.html` locally or run `python3 -m http.server` in the repository root. Optional static test: `node tests/interactions.cjs`.
 
-Each preview is a product demonstration using sample data. The portfolio does not imply live payments, verified business records or live event operations.
+## Deploy
 
-## Local use
-
-Open index.html, or run a local static server:
-
-    python3 -m http.server 8080
-
-Run static checks:
-
-    node tests/interactions.cjs
-
-## Deployment
-
-GitHub Pages hosts this repository from its main branch and root directory. The résumé lives at Raymond_Duma_CV.pdf. Prior designs remain in commit history for easy rollback.
+GitHub Pages serves the repository root on `main`. The original `Raymond_Duma_CV.pdf` remains alongside these files. Older designs are available from Git commit history if we want to revert.
