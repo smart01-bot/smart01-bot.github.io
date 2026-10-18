@@ -37,4 +37,4 @@ Before merging, review desktop and mobile widths, touch rotation and vertical sc
 
 ## Swift Wakala preview
 
-The first project now links to the public interactive Swift Wakala preview at https://swift-wakala-ui-preview.whole-field-8456.chatgpt.site. Internal `silverstone` element IDs remain stable for navigation and tests; the displayed project name is Swift Wakala. The font, heading sizes, and copy have been simplified. Versioned CSS and JavaScript URLs prevent the previous design’s cached assets from being mixed with the updated page.
+The first project now links to the public interactive Swift Wakala preview at https://smart01-bot.github.io/swift-wakala-preview/. Internal `silverstone` element IDs remain stable for navigation and tests; the displayed project name is Swift Wakala. The font, heading sizes, and copy have been simplified. Versioned CSS and JavaScript URLs prevent the previous design’s cached assets from being mixed with the updated page.
