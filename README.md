@@ -1,23 +1,34 @@
-# Raymond Duma — Editorial portfolio
+# Raymond Duma — Personal portfolio
 
-An intentionally simple, responsive, light-mode portfolio. Built with semantic HTML and CSS, with no JavaScript dependencies, external fonts, tracking scripts, backend services or build process.
+A simple, responsive light-mode portfolio using semantic HTML and CSS. No JavaScript runtime, external fonts, authentication, analytics or build step.
 
-## Current design
+## Design direction
 
-- Warm paper surfaces, dark green accents, legible typography and reduced visual clutter.
-- Featured project cards link to independent Swift Wakala, Fahari.io and Tour de Dar previews.
-- Background/experience, selected technologies and straightforward, non-clickable email and phone details.
-- **Prominent résumé download** in the navigation, hero and dedicated résumé section, using the retained \`Raymond_Duma_CV.pdf\` file.
-- Source project repositories are unchanged. The portfolio keeps preview destinations even where a preview repository has not yet been published through GitHub Pages.
+- Warm, light paper surfaces with quiet pine-green typography and accents.
+- Short introduction, three consistent project cards and direct interactive preview links.
+- Compact education and work background, without decorative dashboards or oversized monogram art.
+- Résumé PDF is prominent in the header, hero and dedicated résumé section.
+- Email and phone are deliberately plain, selectable text rather than mailto/tel links.
+- Source repositories and their preview repositories are independent and unchanged by this portfolio.
+
+## Preview links
+
+- [Swift Wakala](https://smart01-bot.github.io/swift-wakala-preview/)
+- [Fahari.io](https://smart01-bot.github.io/Fahari.io-preview/)
+- [Tour de Dar](https://smart01-bot.github.io/tour-de-dar-preview/)
+
+Each preview is a product demonstration using sample data. The portfolio does not imply live payments, verified business records or live event operations.
 
 ## Local use
 
-Open \`index.html\` or serve the directory with \`python3 -m http.server 8080\`. No build is required. Run \`node tests/interactions.cjs\` for static checks.
+Open index.html, or run a local static server:
+
+    python3 -m http.server 8080
+
+Run static checks:
+
+    node tests/interactions.cjs
 
 ## Deployment
 
-GitHub Pages serves the \`main\` branch from repository root. A single revision replaced the earlier dark, animation-heavy portfolio with the editorial design. The previous version remains accessible via Git history for rollback.
-
-## Caveats
-
-Previews are demonstrations rather than operational systems. The standalone preview repositories each require their own contents and GitHub Pages deployment to be publicly accessible; updating a portfolio link does not publish a preview automatically.
+GitHub Pages hosts this repository from its main branch and root directory. The résumé lives at Raymond_Duma_CV.pdf. Prior designs remain in commit history for easy rollback.
