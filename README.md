@@ -14,3 +14,7 @@ Previews:
 Run locally by opening index.html or using python3 -m http.server 8080. Run node tests/interactions.cjs for static checks.
 
 GitHub Pages hosts main from the repository root. The PDF Raymond_Duma_CV.pdf is deliberately preserved. Older layouts remain available in commit history.
+
+## Swift Wakala automated walkthrough
+
+The Swift feature shows an autoplaying, pausable **live browser-demo walkthrough**, not an MP4. It embeds the public no-login Swift preview from the same GitHub Pages origin, crops its actual phone UI and navigates between sample-only agent and main-agent screens. Users can pause it; reduced-motion users must opt in to playback. If the remote preview cannot be embedded, the frame shows a direct link. No provider or backend actions are performed.

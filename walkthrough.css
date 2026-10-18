@@ -1,0 +1,27 @@
+/* The portfolio crops the actual same-origin Swift demo phone into an autoplaying storyboard. */
+.swift-main{min-height:0}
+.swift-media{min-width:0;padding:28px 25px 21px;display:flex;flex-direction:column;align-items:center;position:relative;background:#eddfd4;overflow:hidden}
+.walk-film{display:flex;flex-direction:column;align-items:center;width:100%;position:relative;isolation:isolate}
+.walk-film:before{content:'SWIFT';font:900 clamp(90px,11vw,165px)/1 Arial,sans-serif;color:#d7baa9;position:absolute;top:90px;left:-45px;letter-spacing:-.1em;transform:rotate(-90deg);z-index:-1;pointer-events:none}
+.walk-kicker{width:100%;display:flex;justify-content:space-between;gap:16px;font:10px/1.35 var(--mono);letter-spacing:.03em;color:#745247;margin-bottom:18px}
+.walk-phone{width:min(260px,90%);position:relative;filter:drop-shadow(10px 16px 16px #603c2c38)}
+.walk-viewport{position:relative;aspect-ratio:440/710;overflow:hidden;background:#090a0b;border-radius:27px;border:2px solid #202324}
+.walk-viewport iframe{position:absolute;top:0;left:0;border:0;width:1200px;height:820px;transform-origin:top left;pointer-events:none}
+.walk-intro{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#060708;color:#fff;text-align:center;z-index:2;opacity:0;visibility:hidden;transition:opacity .45s ease,visibility .45s ease}
+[data-scene="0"] .walk-intro{opacity:1;visibility:visible}
+.walk-intro .walk-symbol{font:italic bold 73px/1 Georgia,serif;color:#fff;transform:rotate(-16deg)}
+.walk-intro strong{font:700 24px Arial,sans-serif;margin-top:21px;letter-spacing:-.04em}
+.walk-intro small{font:9px var(--mono);letter-spacing:.16em;margin-top:8px;color:#a6aba9}
+.walk-fallback{position:absolute;inset:0;z-index:3;background:#111416;color:#fff;display:flex;flex-direction:column;gap:20px;align-items:center;justify-content:center;padding:24px;text-align:center;font:14px/1.5 var(--sans)}
+.walk-fallback a{color:#ffe09b;font-weight:700;text-decoration:underline;text-underline-offset:4px}
+.walk-fallback[hidden]{display:none}
+.walk-controls{align-self:stretch;display:flex;align-items:center;justify-content:space-between;gap:8px;border-top:1px solid #c0aa9a;margin-top:22px;padding-top:12px;font:10px/1.5 var(--mono)}
+.walk-controls button{background:transparent;border:1px solid #937c70;padding:6px 9px;cursor:pointer;color:#4d3027;font:700 10px var(--mono);white-space:nowrap}
+.walk-controls button:hover,.walk-controls button:focus-visible{background:#ffeadb}
+.walk-title{width:100%;font:700 clamp(37px,4.8vw,59px)/1 var(--sans)!important;letter-spacing:-.08em!important;margin:22px 0 0!important}
+.walk-title em{font:italic normal 1.08em var(--serif);color:var(--red)}
+.walk-note{width:100%;font:10px/1.4 var(--mono);margin-top:11px;color:#7c655b}
+.swift-story{align-self:center}
+@media(max-width:770px){.swift-media{padding:22px 20px}.walk-film:before{left:0}.walk-phone{width:min(254px,81%)}.walk-title{font-size:55px!important;margin:18px 0 0!important}}
+@media(max-width:460px){.walk-title{font-size:47px!important}.walk-phone{width:min(230px,83%)}.walk-kicker,.walk-controls{font-size:9px}}
+@media(prefers-reduced-motion:reduce){.walk-intro{transition:none}}
