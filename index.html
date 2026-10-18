@@ -1,167 +1,611 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Raymond Jefa Duma — Software Developer, Electronics & Telecommunications Engineer.">
-<title>Raymond Jefa Duma</title>
-<link rel="stylesheet" href="styles.css">
-</head>
-<body>
-<div class="rail" aria-hidden="true"></div>
-
-<header class="site-header">
-<a class="brand" href="#top">R.J.Duma/Smart01-bot</a>
-<nav>
-  <a href="#about">About</a>
-  <a href="#work">Work</a>
-  <a href="#projects">Projects</a>
-  <a href="#contact">Contact</a>
-</nav>
-<a class="header-link" href="https://github.com/smart01-bot" target="_blank" rel="noopener">GitHub</a>
-</header>
-
-<main id="top">
-
-<section class="hero">
-  <span class="node" aria-hidden="true"></span>
-  <span class="status-pill"><span class="dot"></span>Open to new roles</span>
-  <h1>Raymond Jefa Duma</h1>
-  <p class="role mono">software developer / electronics &amp; telecom engineer</p>
-  <p class="hero-copy">I build mobile and web applications, and I understand the hardware and signal systems underneath them — a diploma in electronics &amp; telecommunications, applied through software.</p>
-  <div class="hero-actions">
-    <a class="button primary" href="#projects">View projects</a>
-    <a class="button ghost" href="Raymond_Duma_CV.pdf" download>Download CV</a>
-  </div>
-</section>
-
-<section class="section" id="about">
-  <span class="node" aria-hidden="true"></span>
-  <div class="about-grid">
-    <div class="about-copy">
-      <h2>Technical by training, software-focused by practice</h2>
-      <p>I'm an Electronics &amp; Telecommunications Engineering graduate with hands-on experience across software development, IT support, and technical maintenance.</p>
-      <p>My software work spans mobile and web apps, APIs, databases and full-stack systems — I like tracing a problem down to where it actually breaks, whether that's in a line of code or a circuit.</p>
-    </div>
-    <dl class="spec mono">
-      <div class="spec-row"><dt>Location</dt><dd>Dar es Salaam, TZ</dd></div>
-      <div class="spec-row"><dt>Education</dt><dd>Dip. Electronics &amp; Telecom Eng.</dd></div>
-      <div class="spec-row"><dt>Focus</dt><dd>Software × Systems</dd></div>
-      <div class="spec-row"><dt>Status</dt><dd>Open to new roles</dd></div>
-    </dl>
-  </div>
-</section>
-
-<section class="section" id="work">
-  <span class="node" aria-hidden="true"></span>
-  <h2>Experience</h2>
-  <div class="experience-list">
-    <article class="experience">
-      <div class="experience-date mono">APR – JUL 2026</div>
-      <div>
-        <h3>Junior IT Intern <span>· C.A.R.D. Informatics Ltd</span></h3>
-        <p>Built a cross-platform Flutter mobile application end to end, from design to deployment, and maintained PHP web applications backed by Supabase. Applied RESTful API design across mobile and web, focused on stability and data integrity.</p>
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#111210" />
+    <meta
+      name="description"
+      content="Raymond Jefa Duma — software developer with a background in electronics and telecommunications. Explore projects, experiments, and the systems behind them."
+    />
+    <title>Raymond Duma — Code. Circuits. Curiosity.</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Crect width='80' height='80' rx='18' fill='%23ff7547'/%3E%3Ctext x='13' y='56' font-size='46' font-family='monospace' fill='%23111210'%3Erd%3C/text%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <div class="reading-progress" aria-hidden="true"></div>
+    <header class="header">
+      <a class="brand" href="#home" aria-label="Raymond Duma home"
+        >rd<span>↗</span></a
+      >
+      <nav aria-label="Main navigation">
+        <a href="#projects">Work <sup>03</sup></a
+        ><a href="#about">About</a><a href="#playground">Playground</a
+        ><a href="#contact">Contact ↗</a>
+      </nav>
+      <button
+        class="command-trigger"
+        data-command
+        aria-label="Open command palette"
+      >
+        Explore <kbd>⌘ K</kbd>
+      </button>
+    </header>
+    <main id="main">
+      <section class="hero section-wrap" id="home">
+        <div class="hero-top eyebrow">
+          <span><i class="status-dot"></i> RAYMOND JEFA DUMA</span
+          ><span>DAR ES SALAAM, TZ <time id="local-time">EAT</time></span>
+        </div>
+        <div class="hero-grid">
+          <div class="hero-content">
+            <p class="eyebrow muted">SOFTWARE DEVELOPER × ELECTRONICS</p>
+            <h1>Code.<br />Circuits.<br /><em>Curiosity.</em></h1>
+            <p class="hero-description">
+              From the signal in a circuit to the screen in your hand.<br />I
+              build things. Then I figure out how to make them better.
+            </p>
+            <div class="hero-actions">
+              <a class="button primary" href="#projects"
+                >Explore my work <span>↘</span></a
+              ><a class="text-link" href="Raymond_Duma_CV.pdf" download
+                >Grab my CV <span>↓</span></a
+              >
+            </div>
+          </div>
+          <div class="signal-stage">
+            <div class="stage-corner top-left">FIG. 01 / THE CURIOUS MIND</div>
+            <canvas
+              id="signal"
+              tabindex="0"
+              role="img"
+              aria-label="Interactive three-dimensional signal sculpture. Drag to rotate, use arrow keys to rotate, or use the shape and burst buttons."
+            ></canvas>
+            <div class="orb-label">
+              <span class="tiny-cross">+</span> ALWAYS CONNECTING THE DOTS
+            </div>
+            <div class="stage-controls">
+              <button id="shape-button" aria-label="Change sculpture shape">
+                Shape <span id="shape-name">Sphere</span> ↻</button
+              ><button id="burst-button">Send a pulse ↗</button>
+            </div>
+            <p class="stage-hint">DRAG TO ROTATE · ARROW KEYS ALSO WORK</p>
+          </div>
+        </div>
+        <div class="hero-bottom eyebrow">
+          <span>SCROLL TO DISCOVER ↓</span
+          ><span>BUILT WITH INTENTION. WIRED FOR PLAY.</span
+          ><button id="motion-button" aria-pressed="false">Motion: on ◉</button>
+        </div>
+      </section>
+      <div class="ticker" aria-hidden="true">
+        <div>
+          CURIOUS BY NATURE <span>✳</span> DEVELOPER BY PRACTICE
+          <span>✳</span> MADE IN DAR ES SALAAM <span>✳</span> CURIOUS BY NATURE
+          <span>✳</span> DEVELOPER BY PRACTICE <span>✳</span> MADE IN DAR ES
+          SALAAM <span>✳</span>
+        </div>
       </div>
-    </article>
-    <article class="experience">
-      <div class="experience-date mono">2024 – 2025</div>
-      <div>
-        <h3>Industrial Practical Trainee <span>· TANESCO</span></h3>
-        <p>Assisted with installation, inspection, maintenance and troubleshooting of electrical and telecommunications systems — wiring, control panels, communication equipment, and diagnostic instruments such as multimeters and oscilloscopes.</p>
+      <section id="projects" class="section-wrap work-section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow accent">01 / SELECTED WORK</p>
+            <h2>Ideas, put to work<span class="accent">.</span></h2>
+          </div>
+          <p>
+            Real projects. Different problems.<br />A little of how I think, in
+            each one.
+          </p>
+        </div>
+        <div class="project-tabs" role="tablist" aria-label="Select a project">
+          <button
+            role="tab"
+            id="tab-silverstone"
+            aria-controls="panel-silverstone"
+            aria-selected="true"
+            data-project="silverstone"
+          >
+            <span>01</span> Silverstone <span>↗</span></button
+          ><button
+            role="tab"
+            id="tab-fahari"
+            aria-controls="panel-fahari"
+            aria-selected="false"
+            tabindex="-1"
+            data-project="fahari"
+          >
+            <span>02</span> Fahari <span>↗</span></button
+          ><button
+            role="tab"
+            id="tab-tour"
+            aria-controls="panel-tour"
+            aria-selected="false"
+            tabindex="-1"
+            data-project="tour"
+          >
+            <span>03</span> Tour de Rotary <span>↗</span>
+          </button>
+        </div>
+        <article
+          class="project-panel"
+          role="tabpanel"
+          id="panel-silverstone"
+          aria-labelledby="tab-silverstone"
+        >
+          <div class="project-info">
+            <span class="eyebrow muted">MOBILE + WEB / FLOAT COORDINATION</span>
+            <h3>Moving value.<br />Connecting agents.</h3>
+            <p>
+              Silverstone explores the coordination behind mobile-money float:
+              agent registration, requests, role-based access, and the
+              dashboards that bring it together.
+            </p>
+            <div class="tags">
+              <span>TypeScript</span><span>React</span><span>Express</span
+              ><span>PostgreSQL</span>
+            </div>
+            <div class="project-links">
+              <a
+                href="https://github.com/smart01-bot/SILVERSTONE-FRONTEND"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Frontend ↗</a
+              ><a
+                href="https://github.com/smart01-bot/SILVERSTONE-BACKEND"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Backend ↗</a
+              >
+            </div>
+            <button class="text-link project-detail" data-detail="silverstone">
+              Under the hood <span>+</span>
+            </button>
+          </div>
+          <div class="demo demo-float">
+            <div class="demo-toolbar">
+              <span><i class="status-dot"></i> SILVERSTONE / SIGNAL FLOW</span
+              ><span>INTERACTIVE CONCEPT</span>
+            </div>
+            <div class="flow-map">
+              <div class="flow-node">A<span>Agent</span></div>
+              <div class="flow-line"><i id="transfer-packet"></i></div>
+              <div class="flow-node central">S<span>Coordinator</span></div>
+              <div class="flow-line"></div>
+              <div class="flow-node">B<span>Main agent</span></div>
+            </div>
+            <div class="demo-console">
+              <span class="eyebrow muted">REQUEST LIFECYCLE</span>
+              <ol id="transfer-steps">
+                <li class="active">Create</li>
+                <li>Review</li>
+                <li>Reserve</li>
+                <li>Coordinate</li>
+              </ol>
+              <div class="demo-footer">
+                <p id="transfer-status" aria-live="polite">
+                  A request starts with an agent.
+                </p>
+                <button id="transfer-button" class="small-button">
+                  Run demo ↗
+                </button>
+              </div>
+            </div>
+            <p class="demo-disclaimer">
+              Simulated interface · no real funds or provider connections
+            </p>
+          </div>
+        </article>
+        <article
+          class="project-panel"
+          role="tabpanel"
+          id="panel-fahari"
+          aria-labelledby="tab-fahari"
+          hidden
+        >
+          <div class="project-info">
+            <span class="eyebrow muted">WEB / OPERATIONS & COMPLIANCE</span>
+            <h3>A clearer view<br />of the moving parts.</h3>
+            <p>
+              A dashboard for fahari.io that brings customer and product
+              management, returns, a compliance calendar, and reporting into one
+              role-based workspace.
+            </p>
+            <div class="tags">
+              <span>React</span><span>TypeScript</span><span>Vite</span
+              ><span>Tailwind CSS</span>
+            </div>
+            <div class="project-links">
+              <a
+                href="https://github.com/smart01-bot/fahari-frontend"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Repository ↗</a
+              >
+            </div>
+            <button class="text-link project-detail" data-detail="fahari">
+              Under the hood <span>+</span>
+            </button>
+          </div>
+          <div class="demo demo-board">
+            <div class="demo-toolbar">
+              <span>FAHARI / THE DAILY PICTURE</span
+              ><span>INTERACTIVE CONCEPT</span>
+            </div>
+            <h4>A little less chaos.</h4>
+            <p>Click a sample task to move it forward.</p>
+            <div id="task-board">
+              <button data-task="0">
+                <span class="task-dot"></span
+                ><span>Review customer documents</span
+                ><small>To do</small></button
+              ><button data-task="0">
+                <span class="task-dot"></span><span>Check product returns</span
+                ><small>To do</small></button
+              ><button data-task="0">
+                <span class="task-dot"></span><span>Prepare monthly report</span
+                ><small>To do</small>
+              </button>
+            </div>
+            <div class="board-progress"><div id="task-progress"></div></div>
+            <p id="task-summary" aria-live="polite">0 of 3 complete</p>
+            <p class="demo-disclaimer">
+              Illustrative tasks · changes stay in this page
+            </p>
+          </div>
+        </article>
+        <article
+          class="project-panel"
+          role="tabpanel"
+          id="panel-tour"
+          aria-labelledby="tab-tour"
+          hidden
+        >
+          <div class="project-info">
+            <span class="eyebrow muted">WEB / COMMUNITY & EVENTS</span>
+            <h3>For the people<br />who show up.</h3>
+            <p>
+              An event web experience for the Rotary DSM tour. Built with
+              Next.js and TypeScript to bring an event, its community, and its
+              information together.
+            </p>
+            <div class="tags">
+              <span>Next.js</span><span>TypeScript</span
+              ><span>Tailwind CSS</span>
+            </div>
+            <div class="project-links">
+              <a
+                href="https://github.com/smart01-bot/tourderotary-dsm"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Repository ↗</a
+              >
+            </div>
+            <button class="text-link project-detail" data-detail="tour">
+              Under the hood <span>+</span>
+            </button>
+          </div>
+          <div class="demo demo-race">
+            <div class="demo-toolbar">
+              <span>ROTARY DSM / FIND YOUR RHYTHM</span
+              ><span>INTERACTIVE CONCEPT</span>
+            </div>
+            <div class="race-art" id="race-art" data-sport="swim">
+              <div></div>
+              <div></div>
+              <div></div>
+              <strong id="sport-title">SWIM</strong>
+            </div>
+            <div class="sport-controls" aria-label="Explore disciplines">
+              <button aria-pressed="true" data-sport="swim">01 Swim</button
+              ><button aria-pressed="false" data-sport="bike">02 Bike</button
+              ><button aria-pressed="false" data-sport="run">03 Run</button>
+            </div>
+            <p class="demo-disclaimer">
+              Visual study · not a live event schedule
+            </p>
+          </div>
+        </article>
+      </section>
+      <section class="about-section section-wrap" id="about">
+        <div class="about-heading">
+          <p class="eyebrow accent">02 / THE PERSON BEHIND THE CODE</p>
+          <h2>One foot in software.<br />One in the <em>real world.</em></h2>
+        </div>
+        <div class="about-grid">
+          <div class="identity-card">
+            <div class="identity-art" aria-hidden="true">
+              <span>R</span><span>D</span>
+              <div class="crosshair"></div>
+            </div>
+            <div class="identity-caption">
+              <span>RAYMOND JEFA DUMA</span><span>06°48′ S / 39°17′ E</span>
+            </div>
+            <p>Software × Systems<br /><span>Dar es Salaam, Tanzania</span></p>
+            <a href="Raymond_Duma_CV.pdf" download>Download résumé ↓</a>
+          </div>
+          <div class="about-copy">
+            <p class="big-copy">
+              I like knowing what’s happening <span>underneath.</span>
+            </p>
+            <p>
+              A diploma in Electronics & Telecommunications Engineering gave me
+              a foundation in circuits, signals, and systems. Software gave me
+              another way to build with that curiosity.
+            </p>
+            <p>
+              My experience spans mobile and web applications, APIs, IT support,
+              and technical maintenance. Whether it’s a line of code or a
+              control panel, I enjoy tracing the problem back to its source.
+            </p>
+            <div class="timeline">
+              <details open>
+                <summary>
+                  <span class="eyebrow">APR — JUL 2026</span
+                  ><strong>C.A.R.D. Informatics Ltd</strong><span>+</span>
+                </summary>
+                <p>
+                  Junior IT Intern. Built a cross-platform Flutter application,
+                  maintained PHP web applications backed by Supabase, and worked
+                  with REST APIs across mobile and web.
+                </p>
+              </details>
+              <details>
+                <summary>
+                  <span class="eyebrow">2024 — 2025</span
+                  ><strong>TANESCO</strong><span>+</span>
+                </summary>
+                <p>
+                  Industrial Practical Trainee. Assisted with electrical and
+                  telecommunications installation, inspection, maintenance, and
+                  troubleshooting, using instruments including multimeters and
+                  oscilloscopes.
+                </p>
+              </details>
+              <details>
+                <summary>
+                  <span class="eyebrow">2023 — 2026</span
+                  ><strong>Dar es Salaam Institute of Technology</strong
+                  ><span>+</span>
+                </summary>
+                <p>Diploma in Electronics & Telecommunications Engineering.</p>
+              </details>
+              <details>
+                <summary>
+                  <span class="eyebrow">2017 — 2020</span
+                  ><strong>Saint Dominic Savio Secondary School</strong
+                  ><span>+</span>
+                </summary>
+                <p>Certificate of Secondary Education (CSEE).</p>
+              </details>
+            </div>
+          </div>
+        </div>
+        <div class="toolbox">
+          <div>
+            <p class="eyebrow accent">MY TOOLBOX</p>
+            <h3>Different tools.<br />Same curiosity.</h3>
+          </div>
+          <div>
+            <div class="skill-filters" aria-label="Filter technologies">
+              <button data-filter="all" aria-pressed="true">All</button
+              ><button data-filter="software" aria-pressed="false">
+                Software</button
+              ><button data-filter="data" aria-pressed="false">
+                Data & APIs</button
+              ><button data-filter="hardware" aria-pressed="false">
+                Hardware
+              </button>
+            </div>
+            <div class="skill-cloud">
+              <button data-category="software" data-skill="Flutter">
+                Flutter</button
+              ><button data-category="software" data-skill="React">
+                React / React Native</button
+              ><button data-category="software" data-skill="TypeScript">
+                TypeScript / JavaScript</button
+              ><button data-category="software" data-skill="PHP">PHP</button
+              ><button data-category="software" data-skill="Node">
+                Node.js</button
+              ><button data-category="software" data-skill="Java">Java</button
+              ><button data-category="data" data-skill="PostgreSQL">
+                PostgreSQL / MySQL</button
+              ><button data-category="data" data-skill="Supabase">
+                Supabase</button
+              ><button data-category="data" data-skill="APIs">REST APIs</button
+              ><button data-category="data" data-skill="Redis">Redis</button
+              ><button data-category="hardware" data-skill="Diagnostics">
+                Circuit diagnostics</button
+              ><button data-category="hardware" data-skill="Oscilloscopes">
+                Oscilloscopes</button
+              ><button data-category="hardware" data-skill="Maintenance">
+                Preventive maintenance</button
+              ><button data-category="data" data-skill="Consensus">
+                Consensus concepts
+              </button>
+            </div>
+            <p id="skill-note" aria-live="polite">
+              Pick a tool to see where it fits.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="play-section section-wrap" id="playground">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow accent">03 / PLEASE TOUCH EVERYTHING</p>
+            <h2>
+              Curiosity needs<br />a playground<span class="accent">.</span>
+            </h2>
+          </div>
+          <p>
+            Turn a dial. Send a signal.<br />There’s a little engineer in
+            everyone.
+          </p>
+        </div>
+        <div class="lab-grid">
+          <article class="oscilloscope">
+            <div class="lab-top">
+              <span class="eyebrow">EXPERIMENT 001</span
+              ><span class="live-label">● SIGNAL LAB</span>
+            </div>
+            <h3>Make some waves.</h3>
+            <p>A small nod to where it all started.</p>
+            <canvas
+              id="wave"
+              role="img"
+              aria-label="Oscilloscope showing the waveform selected with the controls below"
+            ></canvas>
+            <div class="wave-controls">
+              <label
+                >Frequency <output id="frequency-value">3 Hz</output
+                ><input
+                  id="frequency"
+                  type="range"
+                  min="1"
+                  max="12"
+                  value="3" /></label
+              ><label
+                >Amplitude <output id="amplitude-value">50%</output
+                ><input
+                  id="amplitude"
+                  type="range"
+                  min="0"
+                  max="100"
+                  value="50"
+              /></label>
+            </div>
+            <div class="wave-types" aria-label="Waveform">
+              <button data-wave="sine" aria-pressed="true">Sine ∿</button
+              ><button data-wave="square" aria-pressed="false">Square ⊓</button
+              ><button data-wave="triangle" aria-pressed="false">
+                Triangle △
+              </button>
+            </div>
+          </article>
+          <article class="terminal">
+            <div class="terminal-bar">
+              <div aria-hidden="true"><i></i><i></i><i></i></div>
+              <span>visitor@raymond: ~</span
+              ><button id="terminal-clear" aria-label="Clear terminal">
+                Clear
+              </button>
+            </div>
+            <div
+              class="terminal-output"
+              id="terminal-output"
+              role="log"
+              aria-label="Terminal output"
+            >
+              <p class="terminal-ascii">RAYMOND_OS <span>v1.0</span></p>
+              <p>
+                Welcome, curious human.<br />This terminal is a small corner of
+                my portfolio.
+              </p>
+              <p>
+                Type <b>help</b> to find your way.<br />Or try <b>whoami</b>,
+                <b>projects</b>, <b>surprise</b>.
+              </p>
+            </div>
+            <form id="terminal-form" autocomplete="off">
+              <label for="terminal-input">guest ~ $</label
+              ><input
+                id="terminal-input"
+                spellcheck="false"
+                aria-label="Terminal command"
+                placeholder="Type a command…"
+              /><button aria-label="Run command">↵</button>
+            </form>
+            <div class="terminal-shortcuts">
+              <button data-terminal="help">help</button
+              ><button data-terminal="whoami">whoami</button
+              ><button data-terminal="surprise">surprise</button>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="contact-section section-wrap" id="contact">
+        <div class="eyebrow">
+          <span><i class="status-dot"></i> LET’S START A CONVERSATION</span
+          ><span>04 / WHAT’S NEXT?</span>
+        </div>
+        <h2>
+          Have a good<br /><em>problem?</em
+          ><a
+            href="mailto:Raymonddjeff0502@gmail.com"
+            aria-label="Email Raymond"
+            >↗</a
+          >
+        </h2>
+        <div class="contact-bottom">
+          <div>
+            <p>I’d love to help figure it out.</p>
+            <a class="email-link" href="mailto:Raymonddjeff0502@gmail.com"
+              >Raymonddjeff0502@gmail.com</a
+            ><button id="copy-email" aria-label="Copy email address">
+              Copy ↗
+            </button>
+          </div>
+          <div class="contact-socials">
+            <a
+              href="https://github.com/smart01-bot"
+              target="_blank"
+              rel="noopener noreferrer"
+              >GitHub ↗</a
+            ><a href="tel:+255710964117">Phone ↗</a
+            ><a href="Raymond_Duma_CV.pdf" download>Résumé ↓</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="section-wrap">
+      <span>© <span id="year">2026</span> RAYMOND JEFA DUMA</span
+      ><button id="theme-button" aria-pressed="false">Switch to light ◐</button
+      ><a href="#home">BACK TO TOP ↑</a>
+    </footer>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <dialog id="command-dialog" aria-labelledby="command-title">
+      <div class="dialog-heading">
+        <h2 id="command-title">Where to?</h2>
+        <button data-close aria-label="Close command palette">Esc ×</button>
       </div>
-    </article>
-  </div>
-</section>
-
-<section class="section" id="projects">
-  <span class="node" aria-hidden="true"></span>
-  <h2>Selected projects</h2>
-  <div class="projects">
-
-    <article class="project">
-      <div class="project-top">
-        <h3>SILVERSTONE</h3>
-        <span class="status-tag mono">production</span>
+      <label class="sr-only" for="command-search"
+        >Search pages and actions</label
+      ><input
+        id="command-search"
+        placeholder="Search pages, projects, actions…"
+        autocomplete="off"
+      />
+      <div id="command-results"></div>
+      <p class="command-help">
+        ↑ ↓ to navigate · Enter to select · Esc to close
+      </p>
+    </dialog>
+    <dialog id="detail-dialog" aria-labelledby="detail-title">
+      <div class="dialog-heading">
+        <span class="eyebrow accent">PROJECT NOTES</span
+        ><button data-close aria-label="Close project notes">Close ×</button>
       </div>
-      <p class="project-description">A mobile money float management system with role-based access, agent registration, float requests, request prioritization, transfer processing, analytics, and real-time dashboard updates.</p>
-      <div class="tags mono"><span>React</span><span>TypeScript</span><span>Node.js</span><span>Express</span><span>PostgreSQL</span><span>Redis</span></div>
-      <div class="project-links">
-        <a href="https://github.com/smart01-bot/SILVERSTONE-FRONTEND" target="_blank" rel="noopener">Frontend</a>
-        <a href="https://github.com/smart01-bot/SILVERSTONE-BACKEND" target="_blank" rel="noopener">Backend</a>
-      </div>
-    </article>
-
-    <article class="project">
-      <div class="project-top">
-        <h3>Fahari</h3>
-        <span class="status-tag mono">in development</span>
-      </div>
-      <p class="project-description">A compliance and operations dashboard for fahari.io — customer and product management, returns tracking, a compliance calendar, file uploads, and reporting, behind role-based authentication.</p>
-      <div class="tags mono"><span>React</span><span>TypeScript</span><span>Vite</span><span>Tailwind CSS</span><span>shadcn/ui</span></div>
-      <div class="project-links">
-        <a href="https://github.com/smart01-bot/fahari-frontend" target="_blank" rel="noopener">Repository</a>
-      </div>
-    </article>
-
-    <article class="project">
-      <div class="project-top">
-        <h3>Tour de Rotary DSM</h3>
-        <span class="status-tag mono">shipped</span>
-      </div>
-      <p class="project-description">A TypeScript-based event web app built for the Rotary DSM tour, using Next.js and Tailwind CSS.</p>
-      <div class="tags mono"><span>Next.js</span><span>TypeScript</span><span>Tailwind CSS</span></div>
-      <div class="project-links">
-        <a href="https://github.com/smart01-bot/tourderotary-dsm" target="_blank" rel="noopener">Repository</a>
-      </div>
-    </article>
-
-  </div>
-</section>
-
-<section class="section" id="skills">
-  <span class="node" aria-hidden="true"></span>
-  <h2>Technologies</h2>
-  <div class="skills">
-    <div class="skill-group"><h3>Development</h3><p>Flutter · React · React Native · TypeScript · JavaScript · PHP · Java · Node.js</p></div>
-    <div class="skill-group"><h3>Data &amp; infrastructure</h3><p>PostgreSQL · Supabase · MySQL · phpMyAdmin · REST APIs · Redis</p></div>
-    <div class="skill-group"><h3>Electronics &amp; systems</h3><p>Circuit diagnostics · Wiring &amp; control panels · Multimeters · Oscilloscopes · Preventive maintenance</p></div>
-    <div class="skill-group"><h3>Blockchain &amp; consensus</h3><p>Proof of Work · Proof of Stake · Gossip protocols · Distributed consistency</p></div>
-  </div>
-</section>
-
-<section class="section" id="education">
-  <span class="node" aria-hidden="true"></span>
-  <h2>Education</h2>
-  <div class="education-list">
-    <article class="experience">
-      <div class="experience-date mono">2023 – 2026</div>
-      <div><h3>Diploma in Electronics &amp; Telecommunications Engineering <span>· Dar es Salaam Institute of Technology</span></h3></div>
-    </article>
-    <article class="experience">
-      <div class="experience-date mono">2017 – 2020</div>
-      <div><h3>Certificate of Secondary Education (CSEE) <span>· Saint Dominic Savio Secondary School</span></h3></div>
-    </article>
-  </div>
-</section>
-
-<section class="contact" id="contact">
-  <span class="node" aria-hidden="true"></span>
-  <h2>Let's build something.</h2>
-  <div class="contact-links mono">
-    <a class="contact-link" href="mailto:Raymonddjeff0502@gmail.com"><span class="contact-label">Email</span><span class="contact-value">Raymonddjeff0502@gmail.com</span></a>
-    <a class="contact-link" href="tel:+255710964117"><span class="contact-label">Phone</span><span class="contact-value">+255 710 964 117</span></a>
-    <a class="contact-link" href="https://github.com/smart01-bot" target="_blank" rel="noopener"><span class="contact-label">GitHub</span><span class="contact-value">github.com/smart01-bot</span></a>
-    <a class="contact-link" href="Raymond_Duma_CV.pdf" target="_blank"><span class="contact-label">CV</span><span class="contact-value">View / download PDF</span></a>
-  </div>
-</section>
-
-</main>
-
-<footer>
-  <span>© 2026 Raymond Jefa Duma</span>
-  <span>Dar es Salaam, Tanzania</span>
-</footer>
-
-<script src="script.js"></script>
-</body>
+      <h2 id="detail-title"></h2>
+      <div id="detail-body"></div>
+    </dialog>
+    <noscript
+      ><p class="noscript-note">
+        Interactive experiments need JavaScript. Your CV, contact links, and
+        portfolio content remain available.
+      </p>
+      <style>
+        .project-tabs {
+          display: none;
+        }
+        .project-panel[hidden] {
+          display: grid !important;
+        }
+      </style></noscript
+    >
+  </body>
 </html>
