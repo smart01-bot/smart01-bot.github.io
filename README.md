@@ -38,3 +38,8 @@ Before merging, review desktop and mobile widths, touch rotation and vertical sc
 ## Swift Wakala preview
 
 The first project now links to the public interactive Swift Wakala preview at https://smart01-bot.github.io/swift-wakala-preview/. Internal `silverstone` element IDs remain stable for navigation and tests; the displayed project name is Swift Wakala. The font, heading sizes, and copy have been simplified. Versioned CSS and JavaScript URLs prevent the previous design’s cached assets from being mixed with the updated page.
+
+
+## Tour de Dar preview
+
+The third project links to the independent [Tour de Dar preview](https://smart01-bot.github.io/tour-de-dar-preview/) at `smart01-bot/tour-de-dar-preview`. Its separate source reference is the original pre-AugmentFX participant and public-page design at commit `a2e569ffc252388f07f0c0ddd2d8927606c3e64b` of `smart01-bot/FRONTEND-TOURE-DE-ROTARY`. It deliberately excludes HQ/admin pages, authentic sign-in and real event data. GitHub Pages must be configured on the preview repository before the linked preview is accessible.
