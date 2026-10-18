@@ -1,45 +1,23 @@
-# Raymond Duma — Interactive Portfolio
+# Raymond Duma — Editorial portfolio
 
-A buildless, responsive portfolio for Raymond Jefa Duma, designed around code, circuits, and curiosity. Plain HTML, CSS, and JavaScript; no application dependencies, API credentials, analytics, or backend.
+An intentionally simple, responsive, light-mode portfolio. Built with semantic HTML and CSS, with no JavaScript dependencies, external fonts, tracking scripts, backend services or build process.
 
-## Run
+## Current design
 
-Serve the repository with any static server, for example `python3 -m http.server 8080`, then open `http://localhost:8080`. No `npm run build` is required. Typography uses system fonts and does not request external font files.
+- Warm paper surfaces, dark green accents, legible typography and reduced visual clutter.
+- Featured project cards link to independent Swift Wakala, Fahari.io and Tour de Dar previews.
+- Background/experience, selected technologies and straightforward, non-clickable email and phone details.
+- **Prominent résumé download** in the navigation, hero and dedicated résumé section, using the retained \`Raymond_Duma_CV.pdf\` file.
+- Source project repositories are unchanged. The portfolio keeps preview destinations even where a preview repository has not yet been published through GitHub Pages.
 
-GitHub Pages currently uses `main` and the repository root. The redesign is prepared on `feat/interactive-portfolio`; merging it into `main` publishes through the repository's existing Pages configuration.
+## Local use
 
-## Explore
+Open \`index.html\` or serve the directory with \`python3 -m http.server 8080\`. No build is required. Run \`node tests/interactions.cjs\` for static checks.
 
-- Drag or use arrow keys to rotate a procedurally drawn 3D sculpture; cycle sphere, torus, and wave geometry; send a pulse.
-- Switch between three project panels. Run a simulated request lifecycle, cycle sample tasks, or explore the event disciplines.
-- Open project notes, expand the experience timeline, and filter or inspect the technology toolbox.
-- Adjust an oscilloscope's frequency, amplitude, and waveform.
-- Use the terminal: `help`, `whoami`, `projects`, `skills`, `contact`, `cv`, `theme`, `pulse`, `surprise`, `clear`, `hello`, `ls`, `pwd`.
-- Press Ctrl/Cmd+K for a searchable command palette. Arrow keys choose actions; Enter runs them; Escape closes it.
-- Switch theme or pause motion. Preferences are stored locally when storage is available.
-- Use the retained email, phone, GitHub, and original CV links.
+## Deployment
 
-All project demos use illustrative state in the current page. They do not move funds, access providers, change real business tasks, or represent a live event schedule. Project descriptions and career information are based on the previous portfolio. Unverified production/shipped labels have been removed.
+GitHub Pages serves the \`main\` branch from repository root. A single revision replaced the earlier dark, animation-heavy portfolio with the editorial design. The previous version remains accessible via Git history for rollback.
 
-## Accessibility and performance
+## Caveats
 
-Semantic sections, skip link, visible focus, keyboard-operable project tabs and dialogs, labeled sliders, responsive layouts, and reduced-motion support. Essential content is visible without JavaScript; the project panels are all shown in that mode. Canvas visuals have descriptions and adjacent controls. Animations skip offscreen canvases and background tabs; reduced-motion scenes redraw only when their state changes. Canvas resolution is capped at 2×. No audio plays.
-
-## Verification
-
-- `node --check script.js`
-- `git diff --check`
-- DOM interaction checks (jsdom 29): install jsdom in a separate directory, then run `NODE_PATH=/path/to/node_modules node tests/interactions.cjs`.
-
-The automated checks cover project switching and keyboard navigation, simulations, task state, skill filters, motion/theme controls, waveform controls, detail dialogs, terminal output/history/injection handling, palette filtering/actions, internal links, unique IDs, and CV presence. Canvas rendering and responsive visual appearance still need a real-browser review; DOM checks do not replace that.
-
-Before merging, review desktop and mobile widths, touch rotation and vertical scrolling, canvas appearance in both themes, dialog focus restoration/Escape, reduced motion, CV download, and external links. The original PDF is unchanged.
-
-## Swift Wakala preview
-
-The first project now links to the public interactive Swift Wakala preview at https://smart01-bot.github.io/swift-wakala-preview/. Internal `silverstone` element IDs remain stable for navigation and tests; the displayed project name is Swift Wakala. The font, heading sizes, and copy have been simplified. Versioned CSS and JavaScript URLs prevent the previous design’s cached assets from being mixed with the updated page.
-
-
-## Tour de Dar preview
-
-The third project links to the independent [Tour de Dar preview](https://smart01-bot.github.io/tour-de-dar-preview/) at `smart01-bot/tour-de-dar-preview`. Its separate source reference is the original pre-AugmentFX participant and public-page design at commit `a2e569ffc252388f07f0c0ddd2d8927606c3e64b` of `smart01-bot/FRONTEND-TOURE-DE-ROTARY`. It deliberately excludes HQ/admin pages, authentic sign-in and real event data. GitHub Pages must be configured on the preview repository before the linked preview is accessible.
+Previews are demonstrations rather than operational systems. The standalone preview repositories each require their own contents and GitHub Pages deployment to be publicly accessible; updating a portfolio link does not publish a preview automatically.
