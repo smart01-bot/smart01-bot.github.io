@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="660" viewBox="0 0 1200 660">
+  <defs><filter id="poster" x="-40%" y="-30%" width="180%" height="190%"><feDropShadow dx="0" dy="17" stdDeviation="16" flood-color="#2b3c55" flood-opacity=".15"/></filter></defs>
+  <rect width="1200" height="660" fill="#dfe5e9"/>
+  <path d="M0 464H1200M0 476H1200M0 488H1200" stroke="#c5cdd3" stroke-width="1"/>
+  <g transform="translate(600 330) rotate(6)" filter="url(#poster)">
+    <rect x="-165" y="-207" width="330" height="414" fill="#233f56"/>
+    <g font-family="Arial,Helvetica,sans-serif" fill="#f4f0dd">
+      <text x="-137" y="-170" font-size="10" letter-spacing="1.7">TOUR DE DAR</text>
+      <text x="137" y="-170" text-anchor="end" font-size="9" letter-spacing="1">DSM / TZ</text>
+      <path d="M-137-150H137" stroke="#82929a" stroke-width=".8"/>
+      <text x="-143" y="-45" font-size="86" font-weight="800" letter-spacing="-6">SWIM</text>
+      <text x="-143" y="35" font-size="86" font-weight="800" letter-spacing="-6" fill="#e4b653">BIKE</text>
+      <text x="-143" y="115" font-size="86" font-weight="800" letter-spacing="-6">RUN.</text>
+      <path d="M-137 144H137" stroke="#82929a" stroke-width=".8"/>
+      <text x="-137" y="174" font-size="8" letter-spacing="1.4">SPORT. COMMUNITY. PURPOSE.</text>
+      <path d="m114 163 15 0 0 15m-15 0 15-15" fill="none" stroke="#e4b653" stroke-width="1.5"/>
+    </g>
+  </g>
+</svg>

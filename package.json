@@ -1,0 +1,13 @@
+{
+  "name": "raymond-duma-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Raymond Duma's static portfolio. Development dependencies are only used for regression checks.",
+  "scripts": {
+    "test": "node --test tests/interactions.cjs"
+  },
+  "devDependencies": {
+    "css-tree": "3.2.1",
+    "linkedom": "0.18.13"
+  }
+}

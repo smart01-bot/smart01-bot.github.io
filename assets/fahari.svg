@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="660" viewBox="0 0 1200 660">
+  <defs><filter id="paper" x="-40%" y="-25%" width="180%" height="180%"><feDropShadow dx="1" dy="16" stdDeviation="14" flood-color="#2f3d40" flood-opacity=".1"/></filter></defs>
+  <rect width="1200" height="660" fill="#e7e9e7"/>
+  <g transform="translate(600 330)">
+    <g transform="rotate(13) translate(48 -14)" filter="url(#paper)"><rect x="-142" y="-187" width="284" height="374" rx="2" fill="#b8c3c7"/><text x="-116" y="-149" font-family="Arial,Helvetica,sans-serif" font-size="10" letter-spacing="1.5" fill="#37494f">REPORTS</text><path d="M-116-126H116M-116 143H116" stroke="#91a2a8"/></g>
+    <g transform="rotate(-12) translate(-37 5)" filter="url(#paper)"><rect x="-142" y="-187" width="284" height="374" rx="2" fill="#d2d8d7"/><text x="-116" y="-149" font-family="Arial,Helvetica,sans-serif" font-size="10" letter-spacing="1.5" fill="#52625f">RETURNS</text><path d="M-116-126H116M-116 143H116" stroke="#b5c0be"/></g>
+    <g transform="rotate(-3)" filter="url(#paper)"><rect x="-142" y="-187" width="284" height="374" rx="2" fill="#fbfbf7" stroke="#d9ded8"/>
+      <text x="-116" y="-145" font-family="Arial,Helvetica,sans-serif" font-size="26" font-weight="700" letter-spacing="-1.5" fill="#37494b">fahari<tspan fill="#c7462b">.</tspan>io</text>
+      <text x="116" y="-148" text-anchor="end" font-family="Arial,Helvetica,sans-serif" font-size="8" fill="#737e7d">01 / 03</text>
+      <path d="M-116-123H116" stroke="#d4dbd6"/>
+      <text x="-116" y="-89" font-family="Arial,Helvetica,sans-serif" font-size="9" letter-spacing="1.5" fill="#667572">EVERYTHING, IN ITS PLACE.</text>
+      <g fill="none" stroke="#899795" stroke-width="1.5"><rect x="-115" y="-56" width="12" height="12" rx="1"/><path d="m-112-50 3 3 5-6"/><rect x="-115" y="-9" width="12" height="12" rx="1"/><path d="m-112-3 3 3 5-6"/><rect x="-115" y="38" width="12" height="12" rx="1"/><path d="m-112 44 3 3 5-6"/></g>
+      <g font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#3f4d4a"><text x="-88" y="-45">Documents</text><text x="-88" y="2">Tax returns</text><text x="-88" y="49">Financial reports</text></g>
+      <g stroke="#e1e5de"><path d="M-115-26H115M-115 21H115M-115 68H115"/></g>
+      <path d="M-115 141H115" stroke="#d4dbd6"/>
+      <text x="-115" y="162" font-family="Arial,Helvetica,sans-serif" font-size="8" letter-spacing="1.2" fill="#6d7773">LESS SEARCHING. MORE DOING.</text>
+      <circle cx="112" cy="158" r="3" fill="#c7462b"/>
+    </g>
+  </g>
+</svg>
