@@ -1,19 +1,20 @@
 # Raymond Duma — Circuits first. Software followed.
 
-A light, minimal personal portfolio. Built with HTML, CSS, JavaScript, and local SVG artwork; there are no runtime dependencies, font services, trackers, or build step.
+An interactive portfolio connecting an electronics background to software projects. Warm paper, charcoal, copper, a visible grid, original dimensional illustrations, and locally hosted typography.
 
 GitHub Pages serves the repository root on **main**:
 https://smart01-bot.github.io/
 
 ## Experience
 
-- Three projects in one gallery. Click the tabs, use left/right arrow keys or Home/End, or swipe the artwork on a touchscreen.
-- Each project opens its existing interactive preview in a new tab. The SVGs are original project illustrations, not screenshots of the applications.
-- Project context and experience details expand on demand.
-- The résumé remains available in the header, About section, and dedicated download strip.
-- Email and phone remain selectable plain text. Optional copy buttons report success only after the clipboard accepts the text, with a selection fallback when access is unavailable.
-- A local Dar es Salaam clock, active section navigation, subtle transitions, and reading progress provide small details.
-- Reduced-motion preferences are respected. Without JavaScript, all three projects, their links, native disclosure sections, and downloads remain available.
+- Poppins leads the headlines, Inter handles navigation and labels, and Open Sans carries body text. Local WOFF2 files include Latin and common punctuation; licenses sit beside the font files. No font service is required at runtime.
+- The hero is an original circuit sculpture projected with Canvas 2D. Pointer movement changes its perspective; clicking the sculpture or the keyboard-accessible **Send a signal** button sends a copper pulse through the traces. Scrolling separates its layers and reveals small interface planes.
+- The sculpture requires no WebGL context or 3D library. A matching SVG remains visible if Canvas is unavailable. Its animation pauses off screen and in hidden documents; reduced-motion mode renders a still illustration.
+- On larger, sufficiently tall screens, one artwork stage stays in place as the three project chapters scroll. Native anchor links jump directly to any project. On smaller screens or with reduced motion, each project keeps its own artwork in the document.
+- All project text stays present and readable. Passive scrolling never hides the focused preview link. Existing interactive previews open in separate tabs; the original artwork is illustrative and does not claim to show the application screens.
+- Project context and experience expand on demand. The résumé is downloadable from the header, About section, and dedicated download strip.
+- Email and phone stay selectable plain text. Optional copying reports success only after the clipboard accepts the text, with a selection fallback when permission is unavailable.
+- A Dar es Salaam clock, section navigation, reading progress, and a gently responsive name at the bottom complete the experience.
 
 ## Preserved destinations
 
@@ -23,31 +24,33 @@ https://smart01-bot.github.io/
 | Fahari.io | https://smart01-bot.github.io/Fahari.io-preview/ |
 | Tour de Dar | https://smart01-bot.github.io/tour-de-dar-preview/ |
 
-These are demonstrations, not live financial or event services. Swift's direct agent-system integration remains unresolved; Fahari uses sample figures; the Tour preview preserves an earlier site version.
+These are demonstrations, not live financial or event services. Swift's direct agent-system integration remains unresolved; Fahari uses sample figures; the Tour preview preserves an earlier site version. The original **Raymond_Duma_CV.pdf** is unchanged. No preview repository is modified.
 
-The original **Raymond_Duma_CV.pdf** is unchanged.
+## Source and checks
 
-## Local use and checks
-
-Open index.html directly, or serve the repository with any static web server.
+Buildless HTML, CSS, and JavaScript. No runtime dependencies, autoplay videos, trackers, or embedded applications. Open `index.html` directly or serve the root with a static web server.
 
 For development checks only, use Node.js 20 or later:
 
-~~~sh
+```sh
 npm ci
 npm test
-~~~
+```
 
-The regression suite checks progressive enhancement, preserved assets and links, CSS syntax, tab relationships, keyboard navigation, project switching, gesture handling, reduced motion, clipboard success/failure, and navigation state.
+Ten DOM-level regression checks cover native links and downloads, font assets, CSS parsing, chapter selection, preserved keyboard focus, mobile and reduced-motion fallbacks, clipboard success/failure, navigation, Canvas fallback, and animation scheduling. The original SVG artwork and multiple renderer states were rendered separately for visual inspection. The updated social image was also rendered and inspected.
 
-These are DOM-level tests. They do not prove browser layout, native focus behavior, or real-device touch behavior. Real-browser visual QA was unavailable in the implementation environment.
+Full-browser layout and real-device touch verification were unavailable in the implementation environment. The DOM checks do not claim to replace them.
 
 ## Files
 
-- index.html — semantic content and native links/disclosures.
-- styles.css — responsive layout, states, reduced motion, and print styles.
-- script.js — small progressive enhancements.
-- assets/ — original SVG project artwork, favicon, and social preview.
-- tests/interactions.cjs — DOM-level regression checks; dependencies are development-only.
+- `index.html`: semantic content, native links, and disclosures.
+- `styles.css`: typography, responsive grid, artwork stages, motion, and print styles.
+- `script.js`: chapter state, contact copying, clock, navigation, and name interaction.
+- `circuit.js`: original renderer, pointer/pulse/scroll behavior, and animation lifecycle.
+- `assets/circuit.svg`: generated still fallback for the sculpture.
+- `assets/work-*.svg`: original illustrations for the three projects.
+- `assets/fonts/`: local WOFF2 subsets and SIL Open Font License copies.
+- `assets/social.png`: sharing image, with the new typography and sculpture.
+- `tests/interactions.cjs`: development-only regression checks.
 
-No changes are made to the preview repositories. Older portfolio designs remain in Git history.
+The layout and interaction direction draws on 3D Discovery and Nocturnal Dream. Their visual assets and source code are not included. Previous portfolio designs remain in Git history.
