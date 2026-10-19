@@ -4,96 +4,124 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="format-detection" content="telephone=no,email=no,address=no">
-  <meta name="theme-color" content="#f7f7f2">
+  <meta name="theme-color" content="#f5f3ed">
   <meta name="description" content="Raymond Jefa Duma. Electronics, software, and a few ideas taking shape in Dar es Salaam. Explore Swift Wakala, Fahari.io, and Tour de Dar.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Raymond Duma — Circuits first. Software followed.">
   <meta property="og:description" content="A few ideas taking shape in Dar es Salaam. Explore the work, try the previews, or get in touch.">
   <meta property="og:url" content="https://smart01-bot.github.io/">
-  <meta property="og:image" content="https://smart01-bot.github.io/assets/social.png">
+  <meta property="og:image" content="https://smart01-bot.github.io/assets/social.png?v=20261019-signal-1">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://smart01-bot.github.io/">
   <link rel="icon" href="assets/favicon.svg?v=20261019-2" type="image/svg+xml">
   <title>Raymond Duma — Electronics &amp; Software</title>
-  <link rel="stylesheet" href="styles.css?v=20261019-quiet-2">
-  <script src="script.js?v=20261019-quiet-1" defer></script>
+  <link rel="preload" href="assets/fonts/poppins-medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css?v=20261019-signal-1">
+  <script src="script.js?v=20261019-signal-1" defer></script>
+  <script src="circuit.js?v=20261019-signal-1" defer></script>
 </head>
 <body id="top">
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="frame header-inner">
-      <nav aria-label="Main navigation"><a href="#work" data-nav="work">Work</a><a href="#about" data-nav="about">About</a><a href="#contact" data-nav="contact">Contact</a></nav>
+      <a class="name-link" href="#top" aria-label="Raymond Duma, back to top">Raymond Duma<span class="name-dot" aria-hidden="true"></span></a>
+      <nav aria-label="Main navigation"><a href="#work" data-nav="work">Work <span>01</span></a><a href="#about" data-nav="about">About <span>02</span></a><a href="#contact" data-nav="contact">Contact <span>03</span></a></nav>
       <a class="header-resume" href="Raymond_Duma_CV.pdf" download="Raymond_Duma_CV.pdf" type="application/pdf">Résumé <svg class="icon" aria-hidden="true"><use href="#arrow-down"/></svg></a>
     </div>
     <div class="reading-line" aria-hidden="true"></div>
   </header>
   <main id="main">
     <section class="hero frame" aria-labelledby="intro-title">
-      <div class="hero-eyebrow meta"><p>Raymond Jefa Duma</p><p class="hero-location">Dar es Salaam, TZ <span class="location-mark" aria-hidden="true"></span></p></div>
-      <h1 id="intro-title">Circuits first.<br><span>Software followed.</span></h1>
-      <div class="hero-bottom">
-        <a class="explore-link" href="#work"><span class="round-arrow"><svg class="icon" aria-hidden="true"><use href="#arrow-down-right"/></svg></span><span>Explore the work<span class="explore-count">Three projects. Still evolving.</span></span></a>
-        <p class="hero-description">I trained in electronics and telecommunications. Somewhere along the way, I started building software. These are a few things that came of it.</p>
+      <div class="hero-eyebrow meta"><p><span class="status-dot" aria-hidden="true"></span>Electronics &amp; software</p><p>Dar es Salaam, Tanzania</p></div>
+      <div class="hero-main">
+        <div class="hero-copy">
+          <h1 id="intro-title"><span>Circuits first.</span><span class="secondary-line">Software</span><span class="secondary-line followed">followed<span class="copper-period">.</span></span></h1>
+          <p class="hero-description">I’m Raymond. Trained in electronics.<br>Drawn to what software makes possible.</p>
+          <a class="explore-link" href="#work">Explore the work <span class="round-arrow"><svg class="icon" aria-hidden="true"><use href="#arrow-down-right"/></svg></span></a>
+        </div>
+        <div class="circuit-scene" id="circuit-scene">
+          <div class="scene-top meta"><span>Figure 01</span><span>Signal → system</span></div>
+          <div class="circuit-viewport" id="circuit-viewport">
+            <img class="circuit-fallback" src="assets/circuit.svg" width="800" height="800" alt="An exploded circuit sculpture with ivory layers, graphite components, and copper connections." fetchpriority="high">
+            <canvas id="circuit-canvas" aria-hidden="true"></canvas>
+            <div class="scene-coordinate" aria-hidden="true"><span>X <span id="scene-x">000</span></span><span>Y <span id="scene-y">000</span></span></div>
+          </div>
+          <div class="scene-bottom"><p class="meta scene-instruction">A little curiosity goes a long way.</p><button class="signal-button" id="send-signal" type="button" hidden><span class="signal-dot" aria-hidden="true"></span><span>Send a signal</span><svg class="icon" aria-hidden="true"><use href="#arrow-up-right"/></svg></button></div>
+          <span class="sr-only" id="signal-status" role="status" aria-live="polite"></span>
+        </div>
       </div>
+      <div class="hero-foot meta"><span>Ideas made tangible.</span><span>Selected work, 2024—2026</span><a href="#work">Scroll to discover <svg class="icon" aria-hidden="true"><use href="#arrow-down"/></svg></a></div>
     </section>
     <section class="work-section frame" id="work" aria-labelledby="work-heading">
-      <div class="section-heading"><div><span class="section-number" aria-hidden="true">01 /</span><h2 id="work-heading">Selected work</h2></div><p class="section-caption">Ideas you can open.</p></div>
-      <div class="project-tabs" aria-label="Choose a project" hidden>
-        <button type="button" id="tab-swift" data-project="swift"><span class="tab-number">01</span><span>Swift Wakala</span><span class="tab-dot" aria-hidden="true"></span></button>
-        <button type="button" id="tab-fahari" data-project="fahari"><span class="tab-number">02</span><span>Fahari.io</span><span class="tab-dot" aria-hidden="true"></span></button>
-        <button type="button" id="tab-tour" data-project="tour"><span class="tab-number">03</span><span>Tour de Dar</span><span class="tab-dot" aria-hidden="true"></span></button>
-      </div>
-      <div class="project-stage">
-        <article class="project-panel" id="project-swift" data-panel="swift" aria-labelledby="swift-title">
-          <a class="project-art art-swift" href="https://smart01-bot.github.io/swift-wakala-preview/" target="_blank" rel="noopener noreferrer" aria-label="Try the Swift Wakala interactive app preview, opens in a new tab">
-            <span class="art-caption meta"><span>Swift Wakala</span><span>Mobile money / Tanzania</span></span>
-            <img src="assets/swift.svg" alt="Two interlocking arrows, an illustration of float moving between networks." width="1200" height="660" fetchpriority="high" draggable="false">
-            <span class="art-bottom"><span class="art-note">Float, with a little more flow.</span><span class="art-open">Try the preview <svg class="icon" aria-hidden="true"><use href="#arrow-up-right"/></svg></span></span>
-          </a>
-          <div class="project-details">
-            <div class="project-identity"><p class="meta project-category">Mobile application · In development</p><h3 id="swift-title">Swift Wakala<span class="project-period">.</span></h3><p class="project-stack">React Native / TypeScript / Express / PostgreSQL</p></div>
-            <div class="project-description"><p>An idea born from a familiar problem: having float on one network and needing it on another. I’m building the requests, accounts, and approval flows around it.</p>
+      <div class="section-heading"><div><span class="section-number" aria-hidden="true">01 /</span><h2 id="work-heading">Selected work</h2></div><p class="section-caption">Three ideas. Taking shape.</p></div>
+      <nav class="chapter-nav" aria-label="Jump to a project">
+        <a href="#project-swift" data-project="swift"><span class="tab-number">01</span><span>Swift Wakala</span><svg class="icon" aria-hidden="true"><use href="#arrow-down-right"/></svg></a>
+        <a href="#project-fahari" data-project="fahari"><span class="tab-number">02</span><span>Fahari.io</span><svg class="icon" aria-hidden="true"><use href="#arrow-down-right"/></svg></a>
+        <a href="#project-tour" data-project="tour"><span class="tab-number">03</span><span>Tour de Dar</span><svg class="icon" aria-hidden="true"><use href="#arrow-down-right"/></svg></a>
+      </nav>
+      <div class="work-layout">
+        <div class="work-visuals" id="work-visuals" hidden aria-label="Selected project artwork"></div>
+        <div class="project-chapters">
+          <article class="project-panel" id="project-swift" data-panel="swift" aria-labelledby="swift-title">
+            <a class="project-art art-swift" href="https://smart01-bot.github.io/swift-wakala-preview/" target="_blank" rel="noopener noreferrer" aria-label="Try the Swift Wakala interactive preview, opens in a new tab">
+              <div class="art-caption meta"><span>Swift Wakala</span><span>01 / 03</span></div>
+              <img src="assets/work-swift.svg" alt="Two sculptural arrows connect in a loop on a copper background." width="900" height="900" loading="lazy" draggable="false">
+              <div class="art-bottom"><span class="meta">Connection / Movement</span><span class="art-open"><svg class="icon" aria-hidden="true"><use href="#arrow-up-right"/></svg></span></div>
+            </a>
+            <div class="project-details">
+              <div class="chapter-top meta"><span>Mobile application</span><span>In development</span></div>
+              <span class="chapter-number" aria-hidden="true">01</span>
+              <p class="project-name">Swift Wakala</p>
+              <h3 id="swift-title">A little more<br>flow.</h3>
+              <p class="project-description">Having float on one network and needing it on another. I’m building the requests, accounts, and approval flows around that familiar problem.</p>
+              <p class="project-stack">React Native / TypeScript / Express / PostgreSQL</p>
+              <div class="project-links"><a class="project-primary" href="https://smart01-bot.github.io/swift-wakala-preview/" target="_blank" rel="noopener noreferrer">Try the app<svg class="icon" aria-hidden="true"><use href="#arrow-up-right"/></svg><span class="sr-only"> (opens in a new tab)</span></a><a class="source-link" href="https://github.com/smart01-bot/SILVERSTONE-FRONTEND" target="_blank" rel="noopener noreferrer">View source<span class="sr-only"> on GitHub (opens in a new tab)</span></a></div>
               <details class="project-note"><summary>Where it stands <span aria-hidden="true">+</span></summary><p>The interface is a working prototype. Direct integration with agent systems is still an open question; the preview does not move real money.</p></details>
-              <div class="project-links"><a class="text-link" href="https://smart01-bot.github.io/swift-wakala-preview/" target="_blank" rel="noopener noreferrer">Try the app <svg class="icon" aria-hidden="true"><use href="#arrow-up-right"/></svg><span class="sr-only"> (opens in a new tab)</span></a><a class="source-link" href="https://github.com/smart01-bot/SILVERSTONE-FRONTEND" target="_blank" rel="noopener noreferrer">View source<span class="sr-only"> on GitHub (opens in a new tab)</span></a></div>
             </div>
-          </div>
-        </article>
-        <article class="project-panel" id="project-fahari" data-panel="fahari" aria-labelledby="fahari-title">
-          <a class="project-art art-fahari" href="https://smart01-bot.github.io/Fahari.io-preview/" target="_blank" rel="noopener noreferrer" aria-label="Try the Fahari.io interactive demo, opens in a new tab">
-            <span class="art-caption meta"><span>Fahari.io</span><span>Business / Paperwork</span></span>
-            <img src="assets/fahari.svg" alt="A neatly arranged stack of documents, returns, and reports." width="1200" height="660" loading="lazy" draggable="false">
-            <span class="art-bottom"><span class="art-note">A place for the paperwork.</span><span class="art-open">Explore the demo <svg class="icon" aria-hidden="true"><use href="#arrow-up-right"/></svg></span></span>
-          </a>
-          <div class="project-details">
-            <div class="project-identity"><p class="meta project-category">Web application · Earlier work</p><h3 id="fahari-title">Fahari.io<span class="project-period">.</span></h3><p class="project-stack">React / TypeScript / Vite</p></div>
-            <div class="project-description"><p>Documents, tax returns, and financial reports tend to end up in different places. This was my attempt at giving them one quieter, more useful workspace.</p>
+          </article>
+          <article class="project-panel" id="project-fahari" data-panel="fahari" aria-labelledby="fahari-title">
+            <a class="project-art art-fahari" href="https://smart01-bot.github.io/Fahari.io-preview/" target="_blank" rel="noopener noreferrer" aria-label="Try the Fahari.io interactive preview, opens in a new tab">
+              <div class="art-caption meta"><span>Fahari.io</span><span>02 / 03</span></div>
+              <img src="assets/work-fahari.svg" alt="An architectural stack of pale documents with charcoal lines and copper markers." width="900" height="900" loading="lazy" draggable="false">
+              <div class="art-bottom"><span class="meta">Structure / Clarity</span><span class="art-open"><svg class="icon" aria-hidden="true"><use href="#arrow-up-right"/></svg></span></div>
+            </a>
+            <div class="project-details">
+              <div class="chapter-top meta"><span>Web application</span><span>Earlier work</span></div>
+              <span class="chapter-number" aria-hidden="true">02</span>
+              <p class="project-name">Fahari.io</p>
+              <h3 id="fahari-title">Everything,<br>in its place.</h3>
+              <p class="project-description">Documents, tax returns, and financial reports tend to end up in different places. This was my attempt at giving them one quieter, more useful workspace.</p>
+              <p class="project-stack">React / TypeScript / Vite</p>
+              <div class="project-links"><a class="project-primary" href="https://smart01-bot.github.io/Fahari.io-preview/" target="_blank" rel="noopener noreferrer">Explore the demo<svg class="icon" aria-hidden="true"><use href="#arrow-up-right"/></svg><span class="sr-only"> (opens in a new tab)</span></a><a class="source-link" href="https://github.com/smart01-bot/fahari-frontend" target="_blank" rel="noopener noreferrer">View source<span class="sr-only"> on GitHub (opens in a new tab)</span></a></div>
               <details class="project-note"><summary>Where it stands <span aria-hidden="true">+</span></summary><p>An earlier React build. The interactive demo uses sample figures and documents, rather than real financial accounts.</p></details>
-              <div class="project-links"><a class="text-link" href="https://smart01-bot.github.io/Fahari.io-preview/" target="_blank" rel="noopener noreferrer">Explore the demo <svg class="icon" aria-hidden="true"><use href="#arrow-up-right"/></svg><span class="sr-only"> (opens in a new tab)</span></a><a class="source-link" href="https://github.com/smart01-bot/fahari-frontend" target="_blank" rel="noopener noreferrer">View source<span class="sr-only"> on GitHub (opens in a new tab)</span></a></div>
             </div>
-          </div>
-        </article>
-        <article class="project-panel" id="project-tour" data-panel="tour" aria-labelledby="tour-title">
-          <a class="project-art art-tour" href="https://smart01-bot.github.io/tour-de-dar-preview/" target="_blank" rel="noopener noreferrer" aria-label="Explore the Tour de Dar site preview, opens in a new tab">
-            <span class="art-caption meta"><span>Tour de Dar</span><span>Sport / Community</span></span>
-            <img src="assets/tour.svg" alt="A bold blue and cream race poster with the words Swim, Bike, Run." width="1200" height="660" loading="lazy" draggable="false">
-            <span class="art-bottom"><span class="art-note">Three disciplines. One city.</span><span class="art-open">Explore the site <svg class="icon" aria-hidden="true"><use href="#arrow-up-right"/></svg></span></span>
-          </a>
-          <div class="project-details">
-            <div class="project-identity"><p class="meta project-category">Event website · Community project</p><h3 id="tour-title">Tour de Dar<span class="project-period">.</span></h3><p class="project-stack">Next.js / TypeScript / Supabase</p></div>
-            <div class="project-description"><p>A home for a Dar es Salaam charity triathlon: the race, the people taking part, and the community around it. Swim, bike, run—with a reason to show up.</p>
+          </article>
+          <article class="project-panel" id="project-tour" data-panel="tour" aria-labelledby="tour-title">
+            <a class="project-art art-tour" href="https://smart01-bot.github.io/tour-de-dar-preview/" target="_blank" rel="noopener noreferrer" aria-label="Try the Tour de Dar interactive preview, opens in a new tab">
+              <div class="art-caption meta"><span>Tour de Dar</span><span>03 / 03</span></div>
+              <img src="assets/work-tour.svg" alt="Three continuous race tracks in cream, copper, and pale blue on a deep blue field." width="900" height="900" loading="lazy" draggable="false">
+              <div class="art-bottom"><span class="meta">Swim / Bike / Run</span><span class="art-open"><svg class="icon" aria-hidden="true"><use href="#arrow-up-right"/></svg></span></div>
+            </a>
+            <div class="project-details">
+              <div class="chapter-top meta"><span>Event website</span><span>Community project</span></div>
+              <span class="chapter-number" aria-hidden="true">03</span>
+              <p class="project-name">Tour de Dar</p>
+              <h3 id="tour-title">One city.<br>Three disciplines.</h3>
+              <p class="project-description">A home for a Dar es Salaam charity triathlon: the race, the people taking part, and the community around it. Swim, bike, run—with a reason to show up.</p>
+              <p class="project-stack">Next.js / TypeScript / Supabase</p>
+              <div class="project-links"><a class="project-primary" href="https://smart01-bot.github.io/tour-de-dar-preview/" target="_blank" rel="noopener noreferrer">Explore the site<svg class="icon" aria-hidden="true"><use href="#arrow-up-right"/></svg><span class="sr-only"> (opens in a new tab)</span></a><a class="source-link" href="https://github.com/smart01-bot/FRONTEND-TOURE-DE-ROTARY/tree/a2e569ffc252388f07f0c0ddd2d8927606c3e64b" target="_blank" rel="noopener noreferrer">View source<span class="sr-only"> on GitHub (opens in a new tab)</span></a></div>
               <details class="project-note"><summary>Where it stands <span aria-hidden="true">+</span></summary><p>The preview preserves an earlier version of the site, before later visual work. It is a demonstration, rather than a live race registration service.</p></details>
-              <div class="project-links"><a class="text-link" href="https://smart01-bot.github.io/tour-de-dar-preview/" target="_blank" rel="noopener noreferrer">Explore the site <svg class="icon" aria-hidden="true"><use href="#arrow-up-right"/></svg><span class="sr-only"> (opens in a new tab)</span></a><a class="source-link" href="https://github.com/smart01-bot/FRONTEND-TOURE-DE-ROTARY/tree/a2e569ffc252388f07f0c0ddd2d8927606c3e64b" target="_blank" rel="noopener noreferrer">View source<span class="sr-only"> on GitHub (opens in a new tab)</span></a></div>
             </div>
-          </div>
-        </article>
+          </article>
+        </div>
       </div>
-      <div class="work-foot"><p>Interactive previews use demonstration data.</p><div class="project-pagination" hidden><span class="project-counter" aria-hidden="true"><span id="current-project">01</span> / 03</span><button class="round-button" type="button" id="previous-project" aria-label="Previous project"><svg class="icon" aria-hidden="true"><use href="#arrow-left"/></svg></button><button class="round-button" type="button" id="next-project" aria-label="Next project"><svg class="icon" aria-hidden="true"><use href="#arrow-right"/></svg></button></div></div>
-      <p class="sr-only" id="project-announcement" role="status" aria-live="polite" aria-atomic="true"></p>
+      <div class="work-foot meta"><p>Interactive previews use demonstration data.</p><span>Explore at your own pace.</span></div>
     </section>
+    <div class="interlude frame" aria-hidden="true"><div class="interlude-line"></div><p>From a connection<br>to something <span>useful.</span></p><span class="interlude-cross">+</span></div>
     <section class="about-section frame" id="about" aria-labelledby="about-heading">
-      <div class="section-heading"><div><span class="section-number" aria-hidden="true">02 /</span><h2 id="about-heading">A bit of background</h2></div></div>
+      <div class="section-heading"><div><span class="section-number" aria-hidden="true">02 /</span><h2 id="about-heading">Behind the work</h2></div></div>
       <div class="about-grid">
-        <div class="about-story"><p class="about-lead">Different tools.<br>The same curiosity.</p><p>My starting point was electronics: understanding how things connect, and what happens when they don’t. Software gave me another way to work on those questions.</p><p>I learn by making things, getting stuck, and working out why. The projects here are part of that process.</p><a class="text-link about-resume" href="Raymond_Duma_CV.pdf" download="Raymond_Duma_CV.pdf" type="application/pdf">The résumé version <svg class="icon" aria-hidden="true"><use href="#arrow-down"/></svg></a></div>
+        <div class="about-story"><p class="about-lead">Different tools.<br>Same curiosity.</p><p>My starting point was electronics: understanding how things connect, and what happens when they don’t. Software gave me another way to work on those questions.</p><p>I learn by making things, getting stuck, and working out why. The projects here are part of that process.</p><a class="text-link about-resume" href="Raymond_Duma_CV.pdf" download="Raymond_Duma_CV.pdf" type="application/pdf">The résumé version <svg class="icon" aria-hidden="true"><use href="#arrow-down"/></svg></a></div>
         <div class="experience" aria-label="Experience and education">
           <details class="experience-item"><summary><span class="experience-year meta">2026</span><span class="experience-title">C.A.R.D. Informatics<span>Junior IT Intern</span></span><span class="details-plus" aria-hidden="true">+</span></summary><div class="experience-description"><p>Flutter development, PHP web applications, Supabase, and REST APIs. Working on the practical details of applications people use.</p></div></details>
           <details class="experience-item"><summary><span class="experience-year meta">2024–25</span><span class="experience-title">TANESCO<span>Industrial practical training</span></span><span class="details-plus" aria-hidden="true">+</span></summary><div class="experience-description"><p>Electrical and telecommunications installation, maintenance, and troubleshooting.</p></div></details>
@@ -105,7 +133,7 @@
     <section class="resume-strip frame" id="resume" aria-labelledby="resume-heading"><div><span class="meta">The short version, on paper.</span><h2 id="resume-heading">Take a copy with you.</h2></div><a class="resume-button" href="Raymond_Duma_CV.pdf" download="Raymond_Duma_CV.pdf" type="application/pdf"><span>Download résumé<span class="resume-format">PDF · Raymond Duma</span></span><svg class="icon" aria-hidden="true"><use href="#arrow-down"/></svg></a></section>
     <section class="contact-section frame" id="contact" aria-labelledby="contact-heading">
       <div class="section-heading"><div><span class="section-number" aria-hidden="true">03 /</span><p>Keep in touch</p></div></div>
-      <div class="contact-grid"><div><h2 id="contact-heading">Have something<br>in mind<span>?</span></h2><p class="contact-intro">A project, a role, or a good question.<br>I’d like to hear it.</p></div>
+      <div class="contact-grid"><div><h2 id="contact-heading">Let’s make<br>something matter<span>.</span></h2><p class="contact-intro">A project, a role, or a good question.<br>I’d like to hear it.</p></div>
         <div class="contact-details">
           <div class="contact-row"><span class="meta">Email</span><div class="contact-value"><p id="contact-email">Raymonddjeff0502@gmail.com</p><button type="button" class="copy-button" data-copy="contact-email" aria-label="Copy email address" hidden><svg class="icon" aria-hidden="true"><use href="#copy"/></svg></button></div></div>
           <div class="contact-row"><span class="meta">Phone</span><div class="contact-value"><p id="contact-phone">+255 710 964 117</p><button type="button" class="copy-button" data-copy="contact-phone" aria-label="Copy phone number" hidden><svg class="icon" aria-hidden="true"><use href="#copy"/></svg></button></div></div>
@@ -114,6 +142,7 @@
       </div>
     </section>
   </main>
+  <div class="signature frame" aria-hidden="true"><div class="signature-meta meta"><span>Curiosity, in progress.</span><span>Dar es Salaam · TZ</span></div><div class="signature-name" id="signature-name"><span>Raymond</span><span>Duma<span class="signature-period">.</span></span></div><div class="signature-rule"></div></div>
   <footer class="frame site-footer"><p>© 2026 Raymond Duma</p><p class="footer-note">Made with curiosity, in Dar.</p><a href="#top">Back to top <svg class="icon" aria-hidden="true"><use href="#arrow-up"/></svg></a></footer>
   <div class="toast" id="copy-status" role="status" aria-live="polite" aria-atomic="true" hidden></div>
   <svg class="icon-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>

@@ -1,84 +1,41 @@
 'use strict';
-
 (() => {
-  const tabList = document.querySelector('.project-tabs');
-  const tabs = Array.from(document.querySelectorAll('[data-project]'));
+  const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const desktop = window.matchMedia('(min-width: 961px) and (min-height: 620px)');
   const panels = Array.from(document.querySelectorAll('[data-panel]'));
-  const names = panels.map(panel => panel.querySelector('h3').textContent.replace(/\.$/, ''));
-  const announcement = document.getElementById('project-announcement');
-  const counter = document.getElementById('current-project');
-  const pagination = document.querySelector('.project-pagination');
-  const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
-  let selected = 0;
+  const chapterLinks = Array.from(document.querySelectorAll('[data-project]'));
+  const stage = document.getElementById('work-visuals');
+  let selected = -1;
+  let enhanced = false;
+  const artLinks = panels.map(panel => {
+    const art = panel.querySelector('.project-art').cloneNode(true);
+    art.hidden = true;
+    art.dataset.visual = panel.dataset.panel;
+    stage.appendChild(art);
+    return art;
+  });
 
-  function selectProject(index, { focus = false, announce = true, animate = true } = {}) {
-    selected = ((index % panels.length) + panels.length) % panels.length;
-    tabs.forEach((tab, i) => {
-      const active = i === selected;
-      tab.setAttribute('aria-selected', String(active));
-      tab.tabIndex = active ? 0 : -1;
-      panels[i].hidden = !active;
-      panels[i].classList.remove('is-entering');
+  function selectChapter(index) {
+    if (index === selected) return;
+    // Reading and keyboard focus take priority over passive scroll animation.
+    if (stage.contains(document.activeElement)) return;
+    selected = index;
+    artLinks.forEach((art, i) => { art.hidden = i !== index; });
+    chapterLinks.forEach((link, i) => {
+      if (i === index) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
     });
-    const panel = panels[selected];
-    if (animate && !motionPreference.matches) panel.classList.add('is-entering');
-    counter.textContent = String(selected + 1).padStart(2, '0');
-    if (announce) announcement.textContent = names[selected] + ', project ' + (selected + 1) + ' of ' + panels.length + '.';
-    if (focus) tabs[selected].focus({ preventScroll: true });
   }
 
-  if (tabList && tabs.length === panels.length && panels.length > 0) {
-    tabList.setAttribute('role', 'tablist');
-    tabs.forEach((tab, i) => {
-      tab.setAttribute('role', 'tab');
-      tab.setAttribute('aria-controls', panels[i].id);
-      panels[i].setAttribute('role', 'tabpanel');
-      panels[i].setAttribute('aria-labelledby', tab.id);
-      panels[i].tabIndex = 0;
-      tab.addEventListener('click', () => selectProject(i));
-      tab.addEventListener('keydown', event => {
-        let next = null;
-        if (event.key === 'ArrowRight') next = selected + 1;
-        if (event.key === 'ArrowLeft') next = selected - 1;
-        if (event.key === 'Home') next = 0;
-        if (event.key === 'End') next = tabs.length - 1;
-        if (next === null) return;
-        event.preventDefault();
-        selectProject(next, { focus: true });
-      });
-      panels[i].addEventListener('animationend', () => panels[i].classList.remove('is-entering'));
-    });
-    selectProject(0, { announce: false, animate: false });
-    tabList.hidden = false;
-    pagination.hidden = false;
-    document.documentElement.classList.add('projects-ready');
-    document.getElementById('previous-project').addEventListener('click', () => selectProject(selected - 1));
-    document.getElementById('next-project').addEventListener('click', () => selectProject(selected + 1));
-
-    // Horizontal touch gestures change work; vertical movement stays native scrolling.
-    let suppressClickUntil = 0;
-    const stage = document.querySelector('.project-stage');
-    stage.addEventListener('click', event => {
-      if (Date.now() < suppressClickUntil) event.preventDefault();
-    }, true);
-    panels.forEach(panel => {
-      const art = panel.querySelector('.project-art');
-      let origin = null;
-      art.addEventListener('pointerdown', event => {
-        if (event.pointerType !== 'touch' || !event.isPrimary) return;
-        origin = { x: event.clientX, y: event.clientY, id: event.pointerId };
-      }, { passive: true });
-      art.addEventListener('pointercancel', () => { origin = null; }, { passive: true });
-      art.addEventListener('pointerup', event => {
-        if (!origin || event.pointerId !== origin.id) return;
-        const dx = event.clientX - origin.x;
-        const dy = event.clientY - origin.y;
-        origin = null;
-        if (Math.abs(dx) < 55 || Math.abs(dx) < Math.abs(dy) * 1.4) return;
-        suppressClickUntil = Date.now() + 500;
-        selectProject(selected + (dx < 0 ? 1 : -1));
-      }, { passive: true });
-    });
+  function configureChapters() {
+    const next = desktop.matches && !motion.matches;
+    if (!next && stage.contains(document.activeElement) && selected >= 0) {
+      panels[selected].querySelector('.project-primary').focus({ preventScroll: true });
+    }
+    enhanced = next;
+    stage.hidden = !enhanced;
+    document.documentElement.classList.toggle('chapters-ready', enhanced);
+    scheduleScrollState();
   }
 
   // Contact details remain plain text. Copying is an optional enhancement.
@@ -128,6 +85,7 @@
   setInterval(() => { if (!document.hidden) updateDarTime(); }, 60000);
   document.addEventListener('visibilitychange', () => { if (!document.hidden) updateDarTime(); });
 
+
   const progress = document.querySelector('.reading-line');
   const navLinks = Array.from(document.querySelectorAll('[data-nav]'));
   const sections = navLinks.map(link => document.getElementById(link.dataset.nav));
@@ -144,6 +102,10 @@
       if (link.dataset.nav === current) link.setAttribute('aria-current', 'location');
       else link.removeAttribute('aria-current');
     });
+    let index = 0;
+    const threshold = window.innerHeight * .5;
+    panels.forEach((panel, i) => { if (panel.getBoundingClientRect().top <= threshold) index = i; });
+    selectChapter(index);
   }
   function scheduleScrollState() {
     if (scheduled) return;
@@ -153,9 +115,23 @@
   window.addEventListener('scroll', scheduleScrollState, { passive: true });
   window.addEventListener('resize', scheduleScrollState, { passive: true });
   window.addEventListener('load', scheduleScrollState);
+  window.addEventListener('hashchange', scheduleScrollState);
   document.addEventListener('toggle', scheduleScrollState, true);
-  tabList.addEventListener('click', scheduleScrollState);
-  tabList.addEventListener('keydown', scheduleScrollState);
-  pagination.addEventListener('click', scheduleScrollState);
-  updateScrollState();
+  stage.addEventListener('focusout', scheduleScrollState);
+  if (desktop.addEventListener) desktop.addEventListener('change', configureChapters);
+  if (motion.addEventListener) motion.addEventListener('change', configureChapters);
+  configureChapters();
+
+  const signature = document.querySelector('.signature');
+  signature.addEventListener('pointermove', event => {
+    if (motion.matches || event.pointerType === 'touch') return;
+    const box = signature.getBoundingClientRect();
+    const x = Math.max(-1, Math.min(1, (event.clientX - box.left) / box.width * 2 - 1));
+    const y = Math.max(-1, Math.min(1, (event.clientY - box.top) / box.height * 2 - 1));
+    signature.style.setProperty('--signature-x', x.toFixed(3));
+    signature.style.setProperty('--signature-y', y.toFixed(3));
+    signature.classList.add('is-reacting');
+  }, { passive: true });
+  signature.addEventListener('pointerleave', () => signature.classList.remove('is-reacting'), { passive: true });
+  if (motion.addEventListener) motion.addEventListener('change', () => signature.classList.remove('is-reacting'));
 })();
