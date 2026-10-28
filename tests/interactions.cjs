@@ -18,6 +18,9 @@ test('the page is text-led and keeps its main destinations', () => {
   assert.equal(document.querySelectorAll('h1').length, 1);
   assert.match(document.querySelector('h1').textContent, /Electronics to\s*software/i);
   for (const id of ['work','about','contact','project-swift','project-fahari','project-tour']) assert.ok(document.getElementById(id));
+  assert.ok(html.includes('C.A.R.D. Informatics<span>Software Developer</span>'));
+  assert.equal(html.toLowerCase().includes('junior it intern'), false);
+  assert.equal(html.toLowerCase().includes('junior intern'), false);
   assert.equal(document.querySelectorAll('.project-panel').length, 3);
   assert.equal(document.querySelectorAll('.project-art,.circuit-scene,#circuit-canvas,.signature,#work-visuals').length, 0);
   assert.equal(document.querySelectorAll('script[src*="circuit.js"]').length, 0);
