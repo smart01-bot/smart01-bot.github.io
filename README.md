@@ -22,7 +22,7 @@ https://smart01-bot.github.io/
 | Fahari.io | https://smart01-bot.github.io/Fahari.io-preview/ |
 | Tour de Dar | https://smart01-bot.github.io/tour-de-dar-preview/ |
 
-The demos are not live financial or event services. Swift's direct agent-system integration remains unresolved; Fahari uses sample figures; the Tour preview preserves an earlier site version. The C.A.R.D. Informatics live-site link is included separately. The original **Raymond_Duma_CV.pdf** is unchanged. No preview repository is modified.
+The demos are not live financial or event services. Swift's direct agent-system integration remains unresolved; Fahari uses sample figures; the Tour preview preserves an earlier site version. The C.A.R.D. Informatics live-site link is included separately. The original **Raymond_Duma_CV.pdf** is unchanged. The About section now includes the NACTVET Award Verification Certificate details and links to the certificate’s QR-code verification destination. The certificate PDF itself is not duplicated in this repository. No preview repository is modified.
 
 ## Source and checks
 
@@ -41,7 +41,7 @@ The automated checks do not replace full-browser visual QA on desktop and mobile
 
 ## Files
 
-- `index.html`: semantic content, project descriptions, and native disclosures.
+- `index.html`: semantic content, project descriptions, credential details, and native disclosures.
 - `styles.css`: warm palette, existing typography, responsive layout, focus styles, and print styles.
 - `script.js`: local clock and section navigation.
 - `assets/work-*.svg`: original project illustrations retained in the repository but no longer shown on the page.

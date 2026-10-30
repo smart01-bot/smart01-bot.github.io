@@ -17,7 +17,9 @@ test('the page is text-led and keeps its main destinations', () => {
   assert.equal(new Set(ids).size, ids.length);
   assert.equal(document.querySelectorAll('h1').length, 1);
   assert.match(document.querySelector('h1').textContent, /Electronics to\s*software/i);
-  for (const id of ['work','about','contact','project-swift','project-fahari','project-tour']) assert.ok(document.getElementById(id));
+  for (const id of ['work','about','contact','project-swift','project-fahari','project-tour','credentials']) assert.ok(document.getElementById(id));
+  assert.match(document.querySelector('#credential-heading').textContent,/Ordinary Diploma in Electronics and Telecommunication Engineering/);
+  assert.equal(document.querySelector('#credentials a').getAttribute('href'), 'https://os.nacte.go.tz/avn/index.php?r=site%2Fverify-avn&token=a8750c5402d326a7dfdebb503a1a765f7912d5d0');
   assert.equal(document.querySelector('.experience-title span').textContent, 'Software Developer');
   assert.equal(document.querySelectorAll('.project-panel').length, 3);
   assert.equal(document.querySelectorAll('.project-art,.circuit-scene,#circuit-canvas,.signature,#work-visuals').length, 0);
