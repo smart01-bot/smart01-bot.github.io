@@ -29,3 +29,14 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
 @media(forced-colors:active){a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid Highlight}}
 @media print{body{font-size:11pt;background:#fff;color:#000}.frame{width:100%;max-width:none}.site-header nav,.header-resume,.explore-link,.chapter-nav,.project-links,.project-note summary,.resume-button,.site-footer a{display:none!important}.site-header{height:auto}.hero{padding:0 0 25px}.hero-copy{padding-top:25px}.hero h1{font-size:38pt}.hero-description,.project-description,.about-story>p:not(.about-lead){font-size:11pt}.project-panel,.about-grid,.contact-grid{display:block}.project-panel{padding:15px 0}.project-copy{margin-top:12px}.resume-strip,.contact-section,.about-section{margin-top:25px}}
+
+/* Portfolio preferences */
+:root{color-scheme:light}
+:root[data-theme="dark"]{color-scheme:dark;--paper:#211e1a;--ink:#f2eadf;--brown:#c49a78;--muted:#c0b2a5;--line:#484038;--soft:#302a24}
+.site-controls{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.setting-button{border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:8px 12px;font:500 12px/1.2 var(--ui);white-space:nowrap;transition:background .2s,border-color .2s,color .2s}
+.setting-button:hover{border-color:var(--brown);color:var(--brown)}
+.preview-disclosure{margin-top:20px;padding:13px 15px;border-left:2px solid var(--brown);background:var(--soft);color:var(--ink);font:400 13px/1.7 var(--body);max-width:68ch}
+:root[data-theme="dark"] .preview-disclosure{background:#302a24}
+@media(max-width:760px){.header-inner{gap:12px}.site-controls{gap:5px}.setting-button{padding:7px 9px;font-size:11px}}
+@media(max-width:560px){.header-inner{flex-wrap:wrap;height:auto;min-height:var(--header);padding-block:10px}.site-header{height:auto;min-height:var(--header)}.header-inner nav{order:3;width:100%;justify-content:flex-start;padding-bottom:5px}.site-controls{margin-left:auto}.header-resume{display:none}}
