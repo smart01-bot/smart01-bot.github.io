@@ -40,3 +40,6 @@
 :root[data-theme="dark"] .preview-disclosure{background:#302a24}
 @media(max-width:760px){.header-inner{gap:12px}.site-controls{gap:5px}.setting-button{padding:7px 9px;font-size:11px}}
 @media(max-width:560px){.header-inner{flex-wrap:wrap;height:auto;min-height:var(--header);padding-block:10px}.site-header{height:auto;min-height:var(--header)}.header-inner nav{order:3;width:100%;justify-content:flex-start;padding-bottom:5px}.site-controls{margin-left:auto}.header-resume{display:none}}
+
+.apk-meta{margin-top:9px;font-size:12px;color:var(--muted)}
+.apk-digest code{display:block;overflow-wrap:anywhere;word-break:break-word;font-size:12px;margin-top:5px}
