@@ -2,6 +2,7 @@
 (() => {
   const text = {
     en: {
+      "skip.content":"Skip to content","hero.title":"<span>Electronics, Telecom &amp;</span> <span class=\"secondary-line\">software<span class=\"copper-period\">.</span></span>",
       "nav.work":"Work","nav.about":"About","nav.contact":"Contact","nav.resume":"Résumé",
       "hero.eyebrow":"Electronics Telecom & software","hero.location":"Dar es Salaam, Tanzania","hero.description":"I’m Raymond, trained in electronics and telecom engineering, but highly drawn to what software makes possible.","hero.explore":"Explore the work",
       "work.heading":"Selected work","work.caption":"Projects and experiments","project.swift.name":"Swift Wakala","project.fahari.name":"Fahari.io","project.tour.name":"Tour de Dar",
@@ -10,7 +11,7 @@
       "swift.description":"Having float on one network and needing it on another. I’m building the requests, accounts, and approval flows around that familiar problem.","fahari.description":"Documents, tax returns, and financial reports tend to end up in different places. This was my attempt at giving them one quieter, more useful workspace.","tour.description":"A home for a Dar es Salaam charity triathlon: the race, the people taking part, and the community around it. Swim, bike, run—with a reason to show up.",
       "swift.stack":"React Native / TypeScript / Express / PostgreSQL","fahari.stack":"React / TypeScript / Vite","tour.stack":"Next.js / TypeScript / Supabase",
       "preview.disclosure":"AI-generated visual preview. This demonstration imitates the intended application’s look and selected screens; it is not the actual application, a live service, or evidence that its integrations are operational.",
-      "link.try":"Try the app","link.source":"View source","link.demo":"Explore the demo","link.site":"Explore the site","project.status":"Where it stands",
+      "link.try":"Open AI preview","link.source":"View source","link.demo":"Open AI preview","link.site":"Open AI preview","project.status":"Where it stands",
       "live.label":"Live site","live.description":"A live website I worked on.","work.disclaimer":"Previews use demonstration data.",
       "about.heading":"About","about.lead":"Different tools.<br>Same curiosity.","about.p1":"My starting point was electronics: understanding how things connect, and what happens when they don’t. Software gave me another way to work on those questions.","about.p2":"I learn by making things, getting stuck, and working out why. The projects here are part of that process.",
       "experience.role":"Software Developer","experience.card":"Flutter development, PHP web applications, Supabase, and REST APIs. Working on the practical details of applications people use.","experience.training":"Industrial practical training","experience.tanesco":"Electrical and telecommunications installation, maintenance, and troubleshooting.","experience.education":"Electronics &amp; telecommunications","experience.dit":"Diploma in Electronics and Telecommunications Engineering. The foundation behind my interest in systems and how they work together.","experience.tools":"Tools","experience.toolkit":"A growing toolkit","experience.toolkit.sub":"Languages, frameworks, and the rest.",
@@ -20,6 +21,7 @@
       "footer.copyright":"© 2026 Raymond Duma","footer.top":"Back to top"
     },
     sw: {
+      "skip.content":"Ruka hadi kwenye maudhui","hero.title":"<span>Elektroniki, mawasiliano na</span> <span class=\"secondary-line\">programu<span class=\"copper-period\">.</span></span>",
       "nav.work":"Kazi","nav.about":"Kuhusu","nav.contact":"Mawasiliano","nav.resume":"Wasifu",
       "hero.eyebrow":"Elektroniki, mawasiliano na programu","hero.location":"Dar es Salaam, Tanzania","hero.description":"Mimi ni Raymond. Nimesomea uhandisi wa elektroniki na mawasiliano, na ninavutiwa sana na uwezekano unaoletwa na programu za kompyuta.","hero.explore":"Tazama kazi",
       "work.heading":"Miradi iliyochaguliwa","work.caption":"Miradi na majaribio","project.swift.name":"Swift Wakala","project.fahari.name":"Fahari.io","project.tour.name":"Tour de Dar",
@@ -28,7 +30,7 @@
       "swift.description":"Kuwa na salio la wakala kwenye mtandao mmoja na kulihitaji kwenye mtandao mwingine. Ninaunda mtiririko wa maombi, akaunti na idhini kwa changamoto hiyo.","fahari.description":"Nyaraka, marejesho ya kodi na ripoti za fedha mara nyingi hutawanyika sehemu tofauti. Huu ulikuwa jaribio la kuviweka pamoja katika eneo moja rahisi kutumia.","tour.description":"Tovuti ya triathlon ya hisani jijini Dar es Salaam: mashindano, washiriki na jamii inayoyaunga mkono. Kuogelea, kuendesha baiskeli na kukimbia kwa lengo la kusaidia jamii.",
       "swift.stack":"React Native / TypeScript / Express / PostgreSQL","fahari.stack":"React / TypeScript / Vite","tour.stack":"Next.js / TypeScript / Supabase",
       "preview.disclosure":"Onyesho la kuona lililotengenezwa kwa AI. Linaiga mwonekano na baadhi ya skrini za programu inayokusudiwa; si programu halisi, si huduma inayofanya kazi moja kwa moja, wala uthibitisho kwamba miunganisho yake inafanya kazi.",
-      "link.try":"Jaribu onyesho","link.source":"Angalia msimbo","link.demo":"Tazama onyesho","link.site":"Tazama tovuti","project.status":"Hali ya mradi",
+      "link.try":"Fungua onyesho la AI","link.source":"Angalia msimbo","link.demo":"Fungua onyesho la AI","link.site":"Fungua onyesho la AI","project.status":"Hali ya mradi",
       "live.label":"Tovuti inayofanya kazi","live.description":"Tovuti hai niliyoshiriki kuitengeneza.","work.disclaimer":"Maonyesho yanatumia data za mfano.",
       "about.heading":"Kuhusu","about.lead":"Zana tofauti.<br>Shauku ileile.","about.p1":"Nilianza na elektroniki: kuelewa jinsi vitu vinavyounganishwa na kinachotokea vinaposhindwa kufanya kazi. Programu za kompyuta zilinipa njia nyingine ya kuchunguza maswali hayo.","about.p2":"Ninajifunza kwa kutengeneza vitu, kukutana na changamoto na kutafuta sababu zake. Miradi hii ni sehemu ya safari hiyo.",
       "experience.role":"Msanidi programu","experience.card":"Utengenezaji wa programu kwa Flutter, mifumo ya wavuti ya PHP, Supabase na REST APIs. Kushughulikia mahitaji halisi ya programu zinazotumiwa na watu.","experience.training":"Mafunzo kwa vitendo viwandani","experience.tanesco":"Usakinishaji, matengenezo na utatuzi wa hitilafu za mifumo ya umeme na mawasiliano.","experience.education":"Elektroniki na mawasiliano","experience.dit":"Stashahada ya Uhandisi wa Elektroniki na Mawasiliano. Msingi wa shauku yangu katika mifumo na jinsi inavyoshirikiana.","experience.tools":"Zana","experience.toolkit":"Seti ya zana inayoendelea kukua","experience.toolkit.sub":"Lugha, mifumo ya ujenzi na mengineyo.",
