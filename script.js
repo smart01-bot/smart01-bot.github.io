@@ -3,7 +3,7 @@
   const text = {
     en: {
       "skip.content":"Skip to content","hero.title":"<span>Electronics, Telecom &amp;</span> <span class=\"secondary-line\">software<span class=\"copper-period\">.</span></span>",
-      "nav.work":"Work","nav.about":"About","nav.contact":"Contact","nav.resume":"Résumé",
+      "nav.work":"Work","nav.about":"About","nav.contact":"Contact","nav.resume":"View CV",
       "hero.eyebrow":"Electronics Telecom & software","hero.location":"Dar es Salaam, Tanzania","hero.description":"I’m Raymond, trained in electronics and telecom engineering, but highly drawn to what software makes possible.","hero.explore":"Explore the work",
       "work.heading":"Selected work","work.caption":"Projects and experiments","project.test.name":"TEST.MOBILE","project.swift.name":"Swift Wakala","project.fahari.name":"Fahari.io","project.tour.name":"Tour de Dar",
       "test.type":"Mobile application","test.status":"Standalone demo","swift.type":"Mobile application","status.development":"In development","fahari.type":"Web application","status.earlier":"Earlier work","tour.type":"Event website","status.community":"Community project",
@@ -22,7 +22,7 @@
     },
     sw: {
       "skip.content":"Ruka hadi kwenye maudhui","hero.title":"<span>Elektroniki, mawasiliano na</span> <span class=\"secondary-line\">programu<span class=\"copper-period\">.</span></span>",
-      "nav.work":"Kazi","nav.about":"Kuhusu","nav.contact":"Mawasiliano","nav.resume":"Wasifu",
+      "nav.work":"Kazi","nav.about":"Kuhusu","nav.contact":"Mawasiliano","nav.resume":"Tazama CV",
       "hero.eyebrow":"Elektroniki, mawasiliano na programu","hero.location":"Dar es Salaam, Tanzania","hero.description":"Mimi ni Raymond. Nimesomea uhandisi wa elektroniki na mawasiliano, na ninavutiwa sana na uwezekano unaoletwa na programu za kompyuta.","hero.explore":"Tazama kazi",
       "work.heading":"Miradi iliyochaguliwa","work.caption":"Miradi na majaribio","project.test.name":"TEST.MOBILE","project.swift.name":"Swift Wakala","project.fahari.name":"Fahari.io","project.tour.name":"Tour de Dar",
       "test.type":"Programu ya simu","test.status":"Onyesho linalojitegemea","swift.type":"Programu ya simu","status.development":"Inaendelezwa","fahari.type":"Programu ya wavuti","status.earlier":"Mradi wa awali","tour.type":"Tovuti ya tukio","status.community":"Mradi wa jamii",
