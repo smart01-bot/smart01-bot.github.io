@@ -11,8 +11,8 @@ https://smart01-bot.github.io/
 - Project descriptions and native disclosure sections stay readable without JavaScript.
 - Four live project previews are embedded in responsive device frames: TEST.MOBILE and Swift Wakala use phone frames; Fahari.io and Tour de Dar use desktop browser frames. The original project links remain available as direct alternatives. Project illustrations and the animated circuit sculpture are not displayed on the page.
 - Poppins leads headlines, Inter handles navigation and labels, and Open Sans carries body text. The local WOFF2 files and licenses remain in the repository.
-- Lightweight JavaScript handles language and theme switching, the Dar es Salaam clock, active section navigation, and responsive preview scaling. Preview iframes load only when they approach the viewport.
-- Reduced-motion preferences are respected. Fonts are served locally; previews are embedded from the existing GitHub Pages demo sites. There are no trackers or autoplay media.
+- Lightweight JavaScript handles language and theme switching, the Dar es Salaam clock, active section navigation, responsive preview scaling, and embedded guided walkthroughs. Preview iframes load only when they approach the viewport; each walkthrough cycles through representative product screens until the visitor interacts.
+- Reduced-motion preferences are respected: they disable automatic walkthroughs. Visitors can take control with any click, tap, or keyboard input. Fonts are served locally; previews are embedded from the separate GitHub Pages demo sites. There are no trackers or autoplay audio/video.
 
 ## Preserved destinations
 
@@ -23,7 +23,7 @@ https://smart01-bot.github.io/
 | Fahari.io | https://smart01-bot.github.io/Fahari.io-preview/ |
 | Tour de Dar | https://smart01-bot.github.io/tour-de-dar-preview/ |
 
-The demos are not live financial or event services. Swift's direct agent-system integration remains unresolved; Fahari uses sample figures; the Tour preview preserves an earlier site version. The C.A.R.D. Informatics live-site link is included separately. The original **Raymond_Duma_CV.pdf** is unchanged. The About section now includes the NACTVET Award Verification Certificate details and links to the certificate’s QR-code verification destination. The certificate PDF itself is not duplicated in this repository. No preview repository is modified.
+The demos are not live financial or event services. Swift's direct agent-system integration remains unresolved; Fahari uses sample figures; the Tour preview preserves an earlier site version. The guided walkthroughs use the previews' existing local-only screens and do not create real transactions or submissions. The C.A.R.D. Informatics live-site link is included separately. The original **Raymond_Duma_CV.pdf** is unchanged. The About section now includes the NACTVET Award Verification Certificate details and links to the certificate’s QR-code verification destination. The certificate PDF itself is not duplicated in this repository. Each preview is maintained in its own repository.
 
 ## Source and checks
 

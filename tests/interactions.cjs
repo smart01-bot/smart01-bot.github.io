@@ -12,10 +12,10 @@ const css = fs.readFileSync(path.join(root, 'styles.css'), 'utf8');
 const js = fs.readFileSync(path.join(root, 'script.js'), 'utf8');
 
 const projects = [
-  { id: 'test-mobile', title: 'TEST.MOBILE', frame: 'phone', src: 'https://smart01-bot.github.io/TEST.MOBILE.preview/' },
-  { id: 'swift', title: 'Swift Wakala', frame: 'phone', src: 'https://smart01-bot.github.io/swift-wakala-preview/' },
-  { id: 'fahari', title: 'Fahari.io', frame: 'pc', src: 'https://smart01-bot.github.io/Fahari.io-preview/' },
-  { id: 'tour', title: 'Tour de Dar', frame: 'pc', src: 'https://smart01-bot.github.io/tour-de-dar-preview/' }
+  { id: 'test-mobile', title: 'TEST.MOBILE', frame: 'phone', src: 'https://smart01-bot.github.io/TEST.MOBILE.preview/?portfolioTour=1' },
+  { id: 'swift', title: 'Swift Wakala', frame: 'phone', src: 'https://smart01-bot.github.io/swift-wakala-preview/?portfolioTour=1' },
+  { id: 'fahari', title: 'Fahari.io', frame: 'pc', src: 'https://smart01-bot.github.io/Fahari.io-preview/?portfolioTour=1' },
+  { id: 'tour', title: 'Tour de Dar', frame: 'pc', src: 'https://smart01-bot.github.io/tour-de-dar-preview/?portfolioTour=1' }
 ];
 
 function attributes(tag) {
