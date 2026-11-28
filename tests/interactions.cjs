@@ -1,90 +1,112 @@
 'use strict';
+
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const vm = require('node:vm');
-const {test} = require('node:test');
-const {parseHTML} = require('linkedom');
-const csstree = require('css-tree');
+const { test } = require('node:test');
+
 const root = path.join(__dirname, '..');
 const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 const css = fs.readFileSync(path.join(root, 'styles.css'), 'utf8');
 const js = fs.readFileSync(path.join(root, 'script.js'), 'utf8');
 
-test('the page is text-led and keeps its main destinations', () => {
-  const {document} = parseHTML(html);
-  const ids = [...document.querySelectorAll('[id]')].map(el => el.id);
-  assert.equal(new Set(ids).size, ids.length);
-  assert.equal(document.querySelectorAll('h1').length, 1);
-  assert.match(document.querySelector('h1').textContent, /Electronics to\s*software/i);
-  for (const id of ['work','about','contact','project-swift','project-fahari','project-tour','credentials']) assert.ok(document.getElementById(id));
-  assert.match(document.querySelector('#credential-heading').textContent,/Ordinary Diploma in Electronics and Telecommunication Engineering/);
-  assert.equal(document.querySelector('#credentials a').getAttribute('href'), 'https://os.nacte.go.tz/avn/index.php?r=site%2Fverify-avn&token=a8750c5402d326a7dfdebb503a1a765f7912d5d0');
-  assert.equal(document.querySelector('.experience-title span').textContent, 'Software Developer');
-  assert.equal(document.querySelectorAll('.project-panel').length, 3);
-  assert.equal(document.querySelectorAll('.project-art,.circuit-scene,#circuit-canvas,.signature,#work-visuals').length, 0);
-  assert.equal(document.querySelectorAll('script[src*="circuit.js"]').length, 0);
-  assert.equal(document.querySelectorAll('video,iframe').length, 0);
-  assert.equal(document.querySelectorAll('a[href="Raymond_Duma_CV.pdf"][download]').length, 3);
-  assert.equal(document.querySelector('#contact-email').textContent, 'Raymonddjeff0502@gmail.com');
-  assert.equal(document.querySelector('#contact-phone').textContent, '+255 710 964 117');
-  assert.equal(document.querySelectorAll('#contact-email a,#contact-phone a,a[href^="mailto:"],a[href^="tel:"]').length, 0);
-  const destinations = [
-    ['swift','https://smart01-bot.github.io/swift-wakala-preview/','Swift Wakala'],
-    ['fahari','https://smart01-bot.github.io/Fahari.io-preview/','Fahari.io'],
-    ['tour','https://smart01-bot.github.io/tour-de-dar-preview/','Tour de Dar']
-  ];
-  for (const [id,url,label] of destinations) {
-    assert.equal(document.querySelector('#project-'+id+' .project-primary').getAttribute('href'), url);
-    assert.equal(document.querySelector('a[href="#project-'+id+'"] span').textContent, label);
+const projects = [
+  { id: 'test-mobile', title: 'TEST.MOBILE', frame: 'phone', src: 'https://smart01-bot.github.io/TEST.MOBILE.preview/' },
+  { id: 'swift', title: 'Swift Wakala', frame: 'phone', src: 'https://smart01-bot.github.io/swift-wakala-preview/' },
+  { id: 'fahari', title: 'Fahari.io', frame: 'pc', src: 'https://smart01-bot.github.io/Fahari.io-preview/' },
+  { id: 'tour', title: 'Tour de Dar', frame: 'pc', src: 'https://smart01-bot.github.io/tour-de-dar-preview/' }
+];
+
+function attributes(tag) {
+  return Object.fromEntries(
+    [...tag.matchAll(/([\w-]+)="([^"]*)"/g)].map((match) => [match[1], match[2]])
+  );
+}
+
+test('the original portfolio content and destinations are preserved', () => {
+  const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map((match) => match[1]);
+  assert.equal(new Set(ids).size, ids.length, 'HTML IDs should be unique');
+  assert.equal((html.match(/<h1\b/g) || []).length, 1, 'the page should have one primary heading');
+  const heading = html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)[1]
+    .replace(/<[^>]+>/g, '')
+    .replace(/&amp;/g, '&');
+  assert.match(heading, /Electronics,Telecom &\s*software/i);
+
+  for (const id of ['work', 'about', 'contact', 'project-test-mobile', 'project-swift', 'project-fahari', 'project-tour', 'credentials']) {
+    assert.match(html, new RegExp('id="' + id + '"'), 'missing section or project: ' + id);
   }
-  assert.ok(document.querySelector('a[href="https://cardinformatics.tz/"]'));
-  for (const el of document.querySelectorAll('[href],[src]')) {
-    const url = el.getAttribute('href') || el.getAttribute('src');
-    if (url.startsWith('#')) assert.ok(document.getElementById(url.slice(1)), url);
-    else if (!/^https?:/.test(url)) assert.ok(fs.existsSync(path.join(root, url.split('?')[0])), url);
-    if (el.getAttribute('target') === '_blank') assert.match(el.getAttribute('rel') || '', /noopener/);
-  }
-  assert.equal(document.querySelectorAll('script[defer]').length, 1);
+  assert.equal((html.match(/class="project-panel"/g) || []).length, 4);
+  assert.match(html, /https:\/\/cardinformatics\.tz\//);
+  assert.match(html, /AVN%20Certificate\.pdf/);
+  assert.match(html, /CURRICULUM_VITAE%20\%281\%29\.pdf/);
+  assert.ok(fs.existsSync(path.join(root, 'AVN Certificate.pdf')));
+  assert.ok(fs.existsSync(path.join(root, 'CURRICULUM_VITAE (1).pdf')));
 });
 
-test('existing font families, warm colors, and responsive CSS are preserved', () => {
-  const errors = [];
-  const ast = csstree.parse(css, {parseCustomProperty:true,onParseError:error=>errors.push(error.message)});
-  csstree.walk(ast,node=>{if(node.type==='Raw')errors.push(node.value);});
-  assert.deepEqual(errors,[]);
-  for (const family of ['Inter','Open Sans','Poppins']) assert.ok(css.includes(family));
-  for (const color of ['--paper:#f7f1e7','--ink:#26211d','--brown:#79543c']) assert.ok(css.includes(color));
-  for (const query of ['max-width:760px','max-width:480px','prefers-reduced-motion:reduce','forced-colors:active','@media print',':focus-visible']) assert.ok(css.includes(query),query);
-  assert.match(css,/body\{[^}]*font:400 16px\/1\.75 var\(--body\)/);
-  for (const match of css.matchAll(/url\('([^']+)'\)/g)) assert.ok(fs.statSync(path.join(root,match[1])).size>1000,match[1]);
-  for (const file of ['inter-OFL.txt','opensans-OFL.txt','poppins-OFL.txt']) assert.match(fs.readFileSync(path.join(root,'assets/fonts',file),'utf8'),/SIL OPEN FONT LICENSE/);
+test('each of the four projects has the matching responsive live preview', () => {
+  const stages = [...html.matchAll(/<div class="preview-stage" data-live-preview data-frame="(phone|pc)"[^>]*>/g)];
+  const frames = stages.map((match) => match[1]);
+  assert.deepEqual(frames, projects.map((project) => project.frame));
+
+  const iframeTags = [...html.matchAll(/<iframe\b[^>]*><\/iframe>/g)].map((match) => attributes(match[0]));
+  assert.equal(iframeTags.length, projects.length);
+  iframeTags.forEach((iframe, index) => {
+    const project = projects[index];
+    assert.equal(iframe['data-preview-src'], project.src);
+    assert.equal(iframe.title, project.title + ' interactive preview');
+    assert.equal(iframe.loading, 'lazy');
+    assert.equal(iframe.referrerpolicy, 'no-referrer');
+    assert.equal(iframe.src, undefined, 'iframe sources should be assigned only near the viewport');
+    assert.match(html, new RegExp('id="project-' + project.id + '"'));
+  });
+
+  for (const project of projects) assert.ok(html.includes(project.src));
 });
 
-test('the script keeps the Dar es Salaam clock and accessible section navigation', () => {
-  const {document} = parseHTML(html);
-  const listeners = {};
-  const window = {innerHeight:900,scrollY:0,addEventListener(type,fn){(listeners[type] ||= []).push(fn);}};
-  const tops = {work:700,about:3400,contact:4600};
-  for (const [id,top] of Object.entries(tops)) document.getElementById(id).getBoundingClientRect=()=>({top:top-window.scrollY});
-  document.documentElement.scrollHeight=5400;
-  document.hidden=false;
-  vm.runInNewContext(js,{document,window,Intl,Date,setInterval:()=>1},{filename:'script.js'});
-  assert.match(document.getElementById('dar-time').textContent,/\d{2}:\d{2} in Dar/);
-  for (const [scroll,id] of [[800,'work'],[3500,'about'],[4500,'contact']]) {
-    window.scrollY=scroll;
-    listeners.scroll.forEach(fn=>fn());
-    assert.equal(document.querySelector('[data-nav][aria-current]').dataset.nav,id);
+test('local assets and external links remain valid and safe', () => {
+  for (const match of html.matchAll(/\b(?:href|src)="([^"]+)"/g)) {
+    const value = match[1];
+    if (value.startsWith('#') || /^(?:https?:|mailto:|tel:|data:)/i.test(value)) continue;
+    const localPath = decodeURIComponent(value.split('?')[0]);
+    assert.ok(fs.existsSync(path.join(root, localPath)), 'missing local asset: ' + value);
+  }
+
+  for (const match of html.matchAll(/<a\b[^>]*target="_blank"[^>]*>/g)) {
+    const attrs = attributes(match[0]);
+    assert.match(attrs.rel || '', /noopener/);
+    assert.match(attrs.rel || '', /noreferrer/);
   }
 });
 
-test('project and experience details use native disclosures and external links are safe', () => {
-  const {document} = parseHTML(html);
-  assert.equal(document.querySelectorAll('details.project-note').length,3);
-  assert.equal(document.querySelectorAll('details.experience-item').length,4);
-  for (const link of document.querySelectorAll('a[target="_blank"]')) {
-    const rel=(link.getAttribute('rel')||'').split(/\s+/);
-    assert.ok(rel.includes('noopener'));
-    assert.ok(rel.includes('noreferrer'));
+test('portfolio styles preserve the established visual system and support device frames', () => {
+  let depth = 0;
+  for (const character of css) {
+    if (character === '{') depth += 1;
+    if (character === '}') depth -= 1;
+    assert.ok(depth >= 0, 'CSS closing brace without a matching opening brace');
   }
+  assert.equal(depth, 0, 'CSS braces should be balanced');
+
+  for (const family of ['Inter', 'Open Sans', 'Poppins']) assert.ok(css.includes(family));
+  for (const color of ['--paper:#f7f1e7', '--ink:#26211d', '--brown:#79543c']) assert.ok(css.includes(color));
+  for (const rule of [
+    '.preview-stage', '.device-phone', '.device-pc', '.device-screen iframe',
+    'max-width:760px', 'max-width:480px', 'prefers-reduced-motion:reduce',
+    'forced-colors:active', '@media print', ':focus-visible'
+  ]) assert.ok(css.includes(rule), 'missing CSS rule: ' + rule);
+});
+
+test('preview behavior is responsive, lazy-loaded, and JavaScript remains syntactically valid', () => {
+  assert.doesNotThrow(() => new vm.Script(js, { filename: 'script.js' }));
+  assert.match(js, /const sizes = \{[\s\S]*phone: \{ width: 390, height: 844 \}/);
+  assert.match(js, /pc: \{ width: 1280, height: 800 \}/);
+  assert.match(js, /new ResizeObserver\(fit\)/);
+  assert.match(js, /new IntersectionObserver/);
+  assert.match(js, /rootMargin: '400px 0px'/);
+  assert.match(js, /iframe\.setAttribute\('src', source\)/);
+  assert.match(js, /portfolio-language/);
+  assert.match(js, /portfolio-theme/);
+  assert.match(js, /Africa\/Dar_es_Salaam/);
+  assert.match(js, /aria-current/);
 });

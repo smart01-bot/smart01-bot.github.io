@@ -104,3 +104,60 @@
   window.addEventListener('resize', updateActiveNav);
   updateActiveNav();
 })();
+
+
+/* Live project previews: responsive device scaling and near-viewport loading. */
+(() => {
+  const sizes = {
+    phone: { width: 390, height: 844 },
+    pc: { width: 1280, height: 800 }
+  };
+
+  document.querySelectorAll('[data-live-preview]').forEach(stage => {
+    const frame = stage.dataset.frame;
+    const dimensions = sizes[frame];
+    const screen = stage.querySelector('.device-screen');
+    const iframe = screen && screen.querySelector('iframe[data-preview-src]');
+    if (!dimensions || !screen || !iframe) return;
+
+    const fit = () => {
+      const availableWidth = screen.clientWidth;
+      if (!availableWidth) return;
+      const scale = availableWidth / dimensions.width;
+      screen.style.height = `${Math.round(dimensions.height * scale)}px`;
+      iframe.style.width = `${dimensions.width}px`;
+      iframe.style.height = `${dimensions.height}px`;
+      iframe.style.transform = `scale(${scale})`;
+    };
+
+    fit();
+    if (typeof ResizeObserver === 'function') {
+      const resizeObserver = new ResizeObserver(fit);
+      resizeObserver.observe(screen);
+    } else {
+      window.addEventListener('resize', fit, { passive: true });
+    }
+
+    let loaded = false;
+    const loadPreview = () => {
+      if (loaded) return;
+      const source = iframe.dataset.previewSrc;
+      if (!source) return;
+      iframe.setAttribute('src', source);
+      loaded = true;
+    };
+
+    if (typeof IntersectionObserver !== 'function') {
+      loadPreview();
+      return;
+    }
+
+    const intersectionObserver = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        loadPreview();
+        intersectionObserver.disconnect();
+      }
+    }, { rootMargin: '400px 0px' });
+    intersectionObserver.observe(stage);
+  });
+})();

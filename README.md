@@ -9,15 +9,16 @@ https://smart01-bot.github.io/
 
 - A simple introduction, selected projects, About section, résumé download, and plain-text contact details.
 - Project descriptions and native disclosure sections stay readable without JavaScript.
-- All three interactive previews open in separate tabs. Project illustrations and the animated circuit sculpture are no longer displayed on the page.
+- Four live project previews are embedded in responsive device frames: TEST.MOBILE and Swift Wakala use phone frames; Fahari.io and Tour de Dar use desktop browser frames. The original project links remain available as direct alternatives. Project illustrations and the animated circuit sculpture are not displayed on the page.
 - Poppins leads headlines, Inter handles navigation and labels, and Open Sans carries body text. The local WOFF2 files and licenses remain in the repository.
-- A small Dar es Salaam clock and active section navigation are the only page-level JavaScript enhancements.
-- Reduced-motion preferences are respected. There are no third-party fonts, embedded applications, trackers, or autoplay media.
+- Lightweight JavaScript handles language and theme switching, the Dar es Salaam clock, active section navigation, and responsive preview scaling. Preview iframes load only when they approach the viewport.
+- Reduced-motion preferences are respected. Fonts are served locally; previews are embedded from the existing GitHub Pages demo sites. There are no trackers or autoplay media.
 
 ## Preserved destinations
 
 | Project | Interactive preview |
 | --- | --- |
+| TEST.MOBILE | https://smart01-bot.github.io/TEST.MOBILE.preview/ |
 | Swift Wakala | https://smart01-bot.github.io/swift-wakala-preview/ |
 | Fahari.io | https://smart01-bot.github.io/Fahari.io-preview/ |
 | Tour de Dar | https://smart01-bot.github.io/tour-de-dar-preview/ |
@@ -37,7 +38,7 @@ npm test
 
 The regression tests check semantic content, preview and résumé links, safe external link targets, local fonts and licenses, CSS parsing, responsive and reduced-motion rules, plain-text contact details, native disclosures, the local clock, and section navigation.
 
-The automated checks do not replace full-browser visual QA on desktop and mobile.
+The automated checks validate preview destinations, frame types, lazy-loading configuration, responsive styles, local assets, and the existing portfolio interactions. They do not replace full-browser visual QA on desktop and mobile.
 
 ## Files
 

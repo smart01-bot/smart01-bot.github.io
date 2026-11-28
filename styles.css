@@ -43,3 +43,22 @@
 
 .apk-meta{margin-top:9px;font-size:12px;color:var(--muted)}
 .apk-digest code{display:block;overflow-wrap:anywhere;word-break:break-word;font-size:12px;margin-top:5px}
+
+
+/* Live project previews — ported from the React portfolio implementation. */
+.preview-stage{margin-top:28px;width:100%;min-width:0}
+.device{background:var(--ink);box-shadow:0 18px 40px -22px rgba(38,33,29,.55)}
+.device-screen{position:relative;overflow:hidden;background:var(--soft);width:100%;min-width:0}
+.device-screen iframe{position:absolute;top:0;left:0;border:0;display:block;transform-origin:top left;background:var(--soft)}
+.device-phone{position:relative;width:min(280px,100%);padding:9px;border-radius:36px}
+.device-phone .device-screen{border-radius:28px}
+.device-notch{position:absolute;z-index:2;top:15px;left:50%;width:78px;height:19px;transform:translateX(-50%);border-radius:12px;background:var(--ink);pointer-events:none}
+.device-pc{width:100%;max-width:600px;border-radius:10px;overflow:hidden}
+.device-bar{display:flex;align-items:center;gap:12px;padding:9px 12px;background:#3b342e}
+.device-dots{display:flex;gap:6px;flex-shrink:0}
+.device-dots i{display:block;width:9px;height:9px;border-radius:50%;background:#8a7b6d}
+.device-url{flex:1;min-width:0;padding:3px 10px;border-radius:6px;background:#26211d;color:#d9cdbf;font:400 12px/1.5 var(--ui);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+:root[data-theme="dark"] .device{background:#0f0d0b}
+:root[data-theme="dark"] .device-notch{background:#0f0d0b}
+:root[data-theme="dark"] .device-url{background:#0f0d0b}
+@media print{.preview-stage{display:none!important}}
